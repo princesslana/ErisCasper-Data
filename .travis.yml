@@ -4,6 +4,10 @@ env:
   global:
   - MAVEN_OPTS="-Drevision=$(git describe --dirty --tags)-SNAPSHOT"
 
+before_install:
+- 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./etc/extract_secrets.sh; fi'
+
+
 stages:
 - build
 - name: snapshot
