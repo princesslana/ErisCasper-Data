@@ -6,4 +6,4 @@ import org.immutables.value.Value;
 
 @Wrapped
 @Value.Immutable
-public interface SnowflakeWrapper extends Wrapper<String> { }
+public interface SnowflakeWrapper extends Wrapper<String> {}
