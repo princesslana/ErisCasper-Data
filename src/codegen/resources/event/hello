@@ -1,0 +1,2 @@
+heartbeat_interval	integer	the interval (in milliseconds) the client should heartbeat with
+_trace	array of strings	used for debugging, array of servers connected to
