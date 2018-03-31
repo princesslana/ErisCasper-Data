@@ -55,12 +55,15 @@ event_classes.each do |clz|
     end
     
     f.puts
-    f.puts '@Value.Immutable'
+    f.puts "@Value.Immutable"
     f.puts "@JsonDeserialize(as=Immutable#{clz.name}.class)"
     f.puts "public interface #{clz.name} {"
     
     clz.fields.each do |field|
     
+    f.puts "  /**"
+    f.puts "    * #{field.description}"
+    f.puts "    */"
     f.puts "  @JsonProperty(\"#{field.name}\")"
     f.puts "  #{field.java_type} #{field.java_name}();"
     f.puts
