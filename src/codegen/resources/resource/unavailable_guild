@@ -1,2 +1,2 @@
-enabled	bool	if the embed is enabled
-channel_id	?snowflake	the embed channel id
+id	snowflake	guild id
+unavailable? *	bool	is this guild unavailable
