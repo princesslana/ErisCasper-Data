@@ -36,6 +36,8 @@ class EventDef
     %w(
       com.fasterxml.jackson.annotation.JsonProperty
       com.fasterxml.jackson.databind.annotation.JsonDeserialize
+      com.github.princesslana.eriscasper.data.resource.*
+      com.google.common.collect.ImmutableList
       org.immutables.value.Value
     ).each do |import|
       f.puts "import #{import};"
@@ -72,6 +74,6 @@ class EventDef
       fields.push FieldDef.from_line(line)
     end
   
-    EventDef.new File.basename(filename).capitalize + "Event", fields
+    EventDef.new File.basename(filename).split('_').collect(&:capitalize).join + "Event", fields
   end
 end

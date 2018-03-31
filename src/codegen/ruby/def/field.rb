@@ -2,18 +2,26 @@
 class FieldDef
   attr_reader :name, :type, :description
   
-  def initialize(name, type, description)
+  def initialize(name, type, *description)
     @name = name
     @type = type
-    @description = description
+    @description = description.join
+  end
+  
+  def optional?
+    type.start_with?('?') || type.end_with?('?')
   end
   
   def java_name
-    "get" + name.split('_').collect(&:capitalize).join
+    "get" + name.tr('?', '').split('_').collect(&:capitalize).join
   end
   
   def java_type
-    get_java_type(type)
+    jt = get_java_type type.tr('?', '')
+    
+    return "java.util.Optional<#{jt}>" if optional?
+    
+    jt
   end
   
   def write(f)
