@@ -1,0 +1,6 @@
+v	integer	gateway protocol version
+user	user object	information about the user including email
+private_channels	array of DM channel objects	the direct message channels the user is in
+guilds	array of Unavailable Guild objects	the guilds the user is in
+session_id	string	used for resuming connections
+_trace	array of strings	used for debugging - the guilds the user is in
