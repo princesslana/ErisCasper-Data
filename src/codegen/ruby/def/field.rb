@@ -9,7 +9,10 @@ class FieldDef
   end
   
   def optional?
-    type.start_with?('?') || type.end_with?('?')
+    # Lists are alreay optional - as the empty list
+    return false if type.include? 'array'
+    
+    type.start_with?('?') || name.end_with?('?')
   end
   
   def java_name
@@ -24,11 +27,17 @@ class FieldDef
     jt
   end
   
+  def json_property_annotation
+    property_name = name.tr '?', ''
+    
+    "@JsonProperty(\"#{property_name}\")"
+  end
+  
   def write(f)
     f.puts "  /**"
     f.puts "    * #{description}"
     f.puts "    */"
-    f.puts "  @JsonProperty(\"#{name}\")"
+    f.puts "  #{json_property_annotation}"
     f.puts "  #{java_type} #{java_name}();"
     f.puts
   end
