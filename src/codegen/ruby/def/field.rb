@@ -16,7 +16,11 @@ class FieldDef
   end
   
   def java_name
-    "get" + name.tr('?', '').split('_').collect(&:capitalize).join
+    prefix = "get"
+    
+    prefix = "is" if type.start_with?('bool')
+  
+    prefix + name.tr('?', '').split('_').collect(&:capitalize).join
   end
   
   def java_type
@@ -43,6 +47,6 @@ class FieldDef
   end
   
   def self.from_line(line)
-    FieldDef.new *line.split("\t").map(&:strip)
+    FieldDef.new *line.tr('*', '').split("\t").map(&:strip)
   end
 end
