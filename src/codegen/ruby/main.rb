@@ -1,7 +1,9 @@
 require 'fileutils'
 
+require_relative 'event_types'
 require_relative 'java_types'
 require_relative 'def/event'
+require_relative 'def/event_wrapper'
 require_relative 'def/resource'
 
 RESOURCES_DIR = File.join %w(. src codegen resources)
@@ -27,6 +29,13 @@ end
 
 generate(resource_files, ResourceDef, 'resource')
 generate(event_files, EventDef, 'event')
+
+EVENTS.each do |evt, dat|
+  name = evt.to_s.split('_').collect(&:capitalize).join + "Event"
+  
+  clz = EventWrapperDef.new name, dat
+  clz.write(BASE_PACKAGE + ".event")  
+end
 
 puts "Done."
 
