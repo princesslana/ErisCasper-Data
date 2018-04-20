@@ -1,4 +1,5 @@
 EVENTS = {
   hello: 'HelloEventData',
-  ready: 'ReadyEventData'
+  ready: 'ReadyEventData',
+  typing_start: 'TypingStartEventData'
 }
