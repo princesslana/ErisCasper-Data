@@ -1,0 +1,3 @@
+channel_id	snowflake	id of the channel
+user_id	snowflake	id of the user
+timestamp	integer	unix time (in seconds) of when the user started typing
