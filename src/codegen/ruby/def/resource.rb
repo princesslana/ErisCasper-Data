@@ -46,6 +46,6 @@ class ResourceDef
       fields.push FieldDef.from_line(line)
     end
   
-    ResourceDef.new File.basename(filename).split('_').collect(&:capitalize).join + "Resource", fields
+    ResourceDef.new File.basename(filename).split('_').collect(&:capitalize).join, fields
   end
 end
