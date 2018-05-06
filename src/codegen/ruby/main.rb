@@ -34,6 +34,8 @@ EVENTS.each do |evt, dat|
   name = evt.to_s.split('_').collect(&:capitalize).join + "Event"
   
   clz = EventWrapperDef.new name, dat
+  
+  puts "Generating #{BASE_PACKAGE}.event.#{clz.name}..."
   clz.write(BASE_PACKAGE + ".event")  
 end
 
