@@ -21,6 +21,7 @@ class EventWrapperDef
         com.fasterxml.jackson.databind.annotation.JsonDeserialize
         com.github.princesslana.eriscasper.data.immutable.Wrapped
         com.github.princesslana.eriscasper.data.immutable.Wrapper
+        com.github.princesslana.eriscasper.data.resource.*
         org.immutables.value.Value
       ).each do |import|
         f.puts "import #{import};"
