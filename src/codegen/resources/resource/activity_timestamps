@@ -1,0 +1,2 @@
+start?	int	unix time (in milliseconds) of when the activity started
+end?	int	unix time (in milliseconds) of when the activity ends

@@ -1,0 +1,9 @@
+name	string	the activity's name
+type	integer	activity type
+url?	?string	stream url, is validated when type is 1
+timestamps?	timestamps object	unix timestamps for start and/or end of the game
+application_id?	snowflake	application id for the game
+details?	?string	what the player is currently doing
+state?	?string	the user's current party status
+party?	party object	information for the current party of the player
+assets?	assets object	images for the presence and their hover texts
