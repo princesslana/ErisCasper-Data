@@ -9,5 +9,7 @@ EVENTS = {
   guild_create: 'Guild',
   guild_update: 'Guild',
   guild_delete: 'UnavailableGuild',
+  guild_ban_add: 'UserWithGuildId',
+  guild_ban_remove: 'UserWithGuildId',
   typing_start: 'TypingStartEventData'
 }
