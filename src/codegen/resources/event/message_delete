@@ -1,0 +1,2 @@
+id	snowflake	the id of the message
+channel_id	snowflake	the id of the channel
