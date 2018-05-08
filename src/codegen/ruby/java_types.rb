@@ -1,6 +1,7 @@
 # Using non-primitive types, as we may want to wrap in Optional
 
 TYPES = {
+  'a user object' => 'User',
   'activity object' => 'Activity',
   'array of channel objects' => 'ImmutableList<Channel>',
   'array of DM channel objects' => 'ImmutableList<Channel>',

@@ -1,0 +1,4 @@
+guild_id	snowflake	the id of the guild
+roles	array of snowflakes	user role ids
+user	a user object	the user
+nick	string	nickname of the user in the guild

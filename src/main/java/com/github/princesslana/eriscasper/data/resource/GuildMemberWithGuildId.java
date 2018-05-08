@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.princesslana.eriscasper.data.DataException;
 
-public class UserWithGuildId extends WithGuildId<User> {
+public class GuildMemberWithGuildId extends WithGuildId<GuildMember> {
   @JsonCreator
-  public UserWithGuildId(JsonNode json) throws DataException {
-    super(User.class, json);
+  public GuildMemberWithGuildId(JsonNode json) throws DataException {
+    super(GuildMember.class, json);
   }
 
-  public User getUser() {
+  public GuildMember getGuildMember() {
     return getValue();
   }
 }
