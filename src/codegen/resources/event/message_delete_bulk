@@ -1,0 +1,2 @@
+ids	array of snowflakes	the ids of the messages
+channel_id	snowflake	the id of the channel

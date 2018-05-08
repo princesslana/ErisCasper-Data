@@ -1,0 +1,3 @@
+text	string	footer text
+icon_url	string	url of footer icon (only supports http(s) and attachments)
+proxy_icon_url	string	a proxied url of footer icon

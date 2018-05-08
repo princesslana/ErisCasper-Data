@@ -20,5 +20,9 @@ EVENTS = {
   guild_role_create: 'GuildRoleCreateEventData',
   guild_role_update: 'GuildRoleUpdateEventData',
   guild_role_delete: 'GuildRoleDeleteEventData',
+  message_create: 'Message',
+  message_update: 'Message',
+  message_delete: 'MessageDeleteEventData',
+  message_delete_bulk: 'MessageDeleteBulkEventData',
   typing_start: 'TypingStartEventData'
 }

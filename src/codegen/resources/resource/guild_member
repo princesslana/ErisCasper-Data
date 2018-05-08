@@ -1,4 +1,4 @@
-user	object	user object
+user	user object	user object
 nick?	string	this users guild nickname (if one is set)
 roles	array of snowflakes	array of role object ids
 joined_at	ISO8601 timestamp	when the user joined the guild

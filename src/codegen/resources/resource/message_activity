@@ -1,0 +1,2 @@
+type	int	type of message activity
+party_id?	string	party_id from a Rich Presence event
