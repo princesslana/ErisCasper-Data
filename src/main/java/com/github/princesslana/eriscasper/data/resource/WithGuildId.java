@@ -1,8 +1,8 @@
 package com.github.princesslana.eriscasper.data.resource;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.princesslana.eriscasper.data.Data;
+import com.github.princesslana.eriscasper.data.DataException;
 import com.github.princesslana.eriscasper.data.Snowflake;
 
 public abstract class WithGuildId<T> {
@@ -11,10 +11,9 @@ public abstract class WithGuildId<T> {
 
   private final T value;
 
-  protected WithGuildId(Class<T> clazz, ObjectMapper jackson, JsonNode json)
-      throws JsonProcessingException {
+  protected WithGuildId(Class<T> clazz, JsonNode json) throws DataException {
     guildId = Snowflake.of(json.get("guild_id").asText());
-    value = jackson.treeToValue(json, clazz);
+    value = Data.fromJson(json, clazz);
   }
 
   public Snowflake getGuildId() {
