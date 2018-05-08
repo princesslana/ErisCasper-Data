@@ -1,12 +1,14 @@
 # Using non-primitive types, as we may want to wrap in Optional
 
 TYPES = {
+  'a role object' => 'Role',
   'a user object' => 'User',
   'activity object' => 'Activity',
   'array of channel objects' => 'ImmutableList<Channel>',
   'array of DM channel objects' => 'ImmutableList<Channel>',
   'array of emoji objects' => 'ImmutableList<Emoji>',
   'array of guild member objects' => 'ImmutableList<GuildMember>',
+  'array of guild members' => 'ImmutableList<GuildMember>',
   'array of overwrite objects' => 'ImmutableList<Overwrite>',
   'array of partial presence update objects' => 'ImmutableList<PresenceUpdate>',
   'array of partial voice state objects' => 'ImmutableList<VoiceState>',
