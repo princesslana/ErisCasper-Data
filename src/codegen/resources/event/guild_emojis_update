@@ -1,0 +1,2 @@
+guild_id	snowflake	id of the guild
+emojis	array of emoji objects	array of emojis

@@ -11,5 +11,7 @@ EVENTS = {
   guild_delete: 'UnavailableGuild',
   guild_ban_add: 'UserWithGuildId',
   guild_ban_remove: 'UserWithGuildId',
+  guild_emojis_update: 'GuildEmojisUpdateEventData',
+  guild_integrations_update: 'GuildIntegrationsUpdateEventData',
   typing_start: 'TypingStartEventData'
 }
