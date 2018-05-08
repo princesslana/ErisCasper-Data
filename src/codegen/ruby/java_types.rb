@@ -7,6 +7,7 @@ TYPES = {
   'array of DM channel objects' => 'ImmutableList<Channel>',
   'array of emoji objects' => 'ImmutableList<Emoji>',
   'array of guild member objects' => 'ImmutableList<GuildMember>',
+  'array of guild members' => 'ImmutableList<GuildMember>',
   'array of overwrite objects' => 'ImmutableList<Overwrite>',
   'array of partial presence update objects' => 'ImmutableList<PresenceUpdate>',
   'array of partial voice state objects' => 'ImmutableList<VoiceState>',

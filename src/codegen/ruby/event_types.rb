@@ -16,5 +16,6 @@ EVENTS = {
   guild_member_add: 'GuildMemberWithGuildId',
   guild_member_remove: 'GuildMemberRemoveEventData',
   guild_member_update: 'GuildMemberUpdateEventData',
+  guild_members_chunk: 'GuildMembersChunkEventData',
   typing_start: 'TypingStartEventData'
 }
