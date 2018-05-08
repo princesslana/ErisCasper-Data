@@ -1,0 +1,2 @@
+guild_id	snowflake	id of the guild
+role_id	snowflake	id of the role
