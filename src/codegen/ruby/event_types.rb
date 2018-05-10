@@ -27,5 +27,10 @@ EVENTS = {
   message_reaction_add: 'MessageReactionAddEventData',
   message_reaction_remove: 'MessageReactionRemoveEventData',
   message_reaction_remove_all: 'MessageReactionRemoveAllEventData',
-  typing_start: 'TypingStartEventData'
+  presence_update: 'PresenceUpdateEventData',
+  typing_start: 'TypingStartEventData',
+  user_update: 'User',
+  voice_state_update: 'VoiceState',
+  voice_server_update: 'VoiceServerUpdateEventData',
+  webhooks_update: 'WebhooksUpdateEventData'
 }
