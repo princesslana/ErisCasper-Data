@@ -1,0 +1,3 @@
+token	string	voice connection token
+guild_id	snowflake	the guild this voice server update is for
+endpoint	string	the voice server host
