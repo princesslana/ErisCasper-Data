@@ -24,5 +24,8 @@ EVENTS = {
   message_update: 'Message',
   message_delete: 'MessageDeleteEventData',
   message_delete_bulk: 'MessageDeleteBulkEventData',
+  message_reaction_add: 'MessageReactionAddEventData',
+  message_reaction_remove: 'MessageReactionRemoveEventData',
+  message_reaction_remove_all: 'MessageReactionRemoveAllEventData',
   typing_start: 'TypingStartEventData'
 }
