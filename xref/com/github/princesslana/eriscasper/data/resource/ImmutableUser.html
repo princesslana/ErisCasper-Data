@@ -459,7 +459,7 @@
 <a class="jxr_linenumber" name="L451" href="#L451">451</a>   @Deprecated
 <a class="jxr_linenumber" name="L452" href="#L452">452</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L453" href="#L453">453</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L454" href="#L454">454</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/User.html">User</a> {
+<a class="jxr_linenumber" name="L454" href="#L454">454</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/User.html">User</a> {
 <a class="jxr_linenumber" name="L455" href="#L455">455</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id;
 <a class="jxr_linenumber" name="L456" href="#L456">456</a>     @Nullable String username;
 <a class="jxr_linenumber" name="L457" href="#L457">457</a>     @Nullable String discriminator;
@@ -525,7 +525,7 @@
 <a class="jxr_linenumber" name="L517" href="#L517">517</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L518" href="#L518">518</a>   @Deprecated
 <a class="jxr_linenumber" name="L519" href="#L519">519</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L520" href="#L520">520</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUser.html">ImmutableUser</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Json</a> json) {
+<a class="jxr_linenumber" name="L520" href="#L520">520</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUser.html">ImmutableUser</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Json</a> json) {
 <a class="jxr_linenumber" name="L521" href="#L521">521</a>     ImmutableUser.Builder builder = ImmutableUser.builder();
 <a class="jxr_linenumber" name="L522" href="#L522">522</a>     <strong class="jxr_keyword">if</strong> (json.id != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L523" href="#L523">523</a>       builder.id(json.id);
@@ -586,7 +586,7 @@
 <a class="jxr_linenumber" name="L578" href="#L578">578</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L579" href="#L579">579</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L580" href="#L580">580</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L581" href="#L581">581</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> {
+<a class="jxr_linenumber" name="L581" href="#L581">581</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> {
 <a class="jxr_linenumber" name="L582" href="#L582">582</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_ID = 0x1L;
 <a class="jxr_linenumber" name="L583" href="#L583">583</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_USERNAME = 0x2L;
 <a class="jxr_linenumber" name="L584" href="#L584">584</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_DISCRIMINATOR = 0x4L;
@@ -601,7 +601,7 @@
 <a class="jxr_linenumber" name="L593" href="#L593">593</a>     <strong class="jxr_keyword">private</strong> @Nullable Boolean isVerified;
 <a class="jxr_linenumber" name="L594" href="#L594">594</a>     <strong class="jxr_keyword">private</strong> @Nullable String email;
 <a class="jxr_linenumber" name="L595" href="#L595">595</a> 
-<a class="jxr_linenumber" name="L596" href="#L596">596</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a>() {
+<a class="jxr_linenumber" name="L596" href="#L596">596</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a>() {
 <a class="jxr_linenumber" name="L597" href="#L597">597</a>     }
 <a class="jxr_linenumber" name="L598" href="#L598">598</a> 
 <a class="jxr_linenumber" name="L599" href="#L599">599</a>     <em class="jxr_javadoccomment">/**</em>
@@ -612,7 +612,7 @@
 <a class="jxr_linenumber" name="L604" href="#L604">604</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L605" href="#L605">605</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L606" href="#L606">606</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L607" href="#L607">607</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/User.html">User</a> instance) {
+<a class="jxr_linenumber" name="L607" href="#L607">607</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/User.html">User</a> instance) {
 <a class="jxr_linenumber" name="L608" href="#L608">608</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L609" href="#L609">609</a>       id(instance.getId());
 <a class="jxr_linenumber" name="L610" href="#L610">610</a>       username(instance.getUsername());
@@ -647,7 +647,7 @@
 <a class="jxr_linenumber" name="L639" href="#L639">639</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L640" href="#L640">640</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L641" href="#L641">641</a>     @JsonProperty(<span class="jxr_string">"id"</span>)
-<a class="jxr_linenumber" name="L642" href="#L642">642</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> id(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id) {
+<a class="jxr_linenumber" name="L642" href="#L642">642</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> id(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id) {
 <a class="jxr_linenumber" name="L643" href="#L643">643</a>       <strong class="jxr_keyword">this</strong>.id = Objects.requireNonNull(id, <span class="jxr_string">"id"</span>);
 <a class="jxr_linenumber" name="L644" href="#L644">644</a>       initBits &amp;= ~INIT_BIT_ID;
 <a class="jxr_linenumber" name="L645" href="#L645">645</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -660,7 +660,7 @@
 <a class="jxr_linenumber" name="L652" href="#L652">652</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L653" href="#L653">653</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L654" href="#L654">654</a>     @JsonProperty(<span class="jxr_string">"username"</span>)
-<a class="jxr_linenumber" name="L655" href="#L655">655</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> username(String username) {
+<a class="jxr_linenumber" name="L655" href="#L655">655</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> username(String username) {
 <a class="jxr_linenumber" name="L656" href="#L656">656</a>       <strong class="jxr_keyword">this</strong>.username = Objects.requireNonNull(username, <span class="jxr_string">"username"</span>);
 <a class="jxr_linenumber" name="L657" href="#L657">657</a>       initBits &amp;= ~INIT_BIT_USERNAME;
 <a class="jxr_linenumber" name="L658" href="#L658">658</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -673,7 +673,7 @@
 <a class="jxr_linenumber" name="L665" href="#L665">665</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L666" href="#L666">666</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L667" href="#L667">667</a>     @JsonProperty(<span class="jxr_string">"discriminator"</span>)
-<a class="jxr_linenumber" name="L668" href="#L668">668</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> discriminator(String discriminator) {
+<a class="jxr_linenumber" name="L668" href="#L668">668</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> discriminator(String discriminator) {
 <a class="jxr_linenumber" name="L669" href="#L669">669</a>       <strong class="jxr_keyword">this</strong>.discriminator = Objects.requireNonNull(discriminator, <span class="jxr_string">"discriminator"</span>);
 <a class="jxr_linenumber" name="L670" href="#L670">670</a>       initBits &amp;= ~INIT_BIT_DISCRIMINATOR;
 <a class="jxr_linenumber" name="L671" href="#L671">671</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -685,7 +685,7 @@
 <a class="jxr_linenumber" name="L677" href="#L677">677</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L678" href="#L678">678</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L679" href="#L679">679</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L680" href="#L680">680</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> avatar(String avatar) {
+<a class="jxr_linenumber" name="L680" href="#L680">680</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> avatar(String avatar) {
 <a class="jxr_linenumber" name="L681" href="#L681">681</a>       <strong class="jxr_keyword">this</strong>.avatar = Objects.requireNonNull(avatar, <span class="jxr_string">"avatar"</span>);
 <a class="jxr_linenumber" name="L682" href="#L682">682</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L683" href="#L683">683</a>     }
@@ -697,7 +697,7 @@
 <a class="jxr_linenumber" name="L689" href="#L689">689</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L690" href="#L690">690</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L691" href="#L691">691</a>     @JsonProperty(<span class="jxr_string">"avatar"</span>)
-<a class="jxr_linenumber" name="L692" href="#L692">692</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> avatar(Optional&lt;String&gt; avatar) {
+<a class="jxr_linenumber" name="L692" href="#L692">692</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> avatar(Optional&lt;String&gt; avatar) {
 <a class="jxr_linenumber" name="L693" href="#L693">693</a>       <strong class="jxr_keyword">this</strong>.avatar = avatar.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L694" href="#L694">694</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L695" href="#L695">695</a>     }
@@ -708,7 +708,7 @@
 <a class="jxr_linenumber" name="L700" href="#L700">700</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L701" href="#L701">701</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L702" href="#L702">702</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L703" href="#L703">703</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> isBot(<strong class="jxr_keyword">boolean</strong> isBot) {
+<a class="jxr_linenumber" name="L703" href="#L703">703</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> isBot(<strong class="jxr_keyword">boolean</strong> isBot) {
 <a class="jxr_linenumber" name="L704" href="#L704">704</a>       <strong class="jxr_keyword">this</strong>.isBot = isBot;
 <a class="jxr_linenumber" name="L705" href="#L705">705</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L706" href="#L706">706</a>     }
@@ -720,7 +720,7 @@
 <a class="jxr_linenumber" name="L712" href="#L712">712</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L713" href="#L713">713</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L714" href="#L714">714</a>     @JsonProperty(<span class="jxr_string">"bot"</span>)
-<a class="jxr_linenumber" name="L715" href="#L715">715</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> isBot(Optional&lt;Boolean&gt; isBot) {
+<a class="jxr_linenumber" name="L715" href="#L715">715</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> isBot(Optional&lt;Boolean&gt; isBot) {
 <a class="jxr_linenumber" name="L716" href="#L716">716</a>       <strong class="jxr_keyword">this</strong>.isBot = isBot.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L717" href="#L717">717</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L718" href="#L718">718</a>     }
@@ -731,7 +731,7 @@
 <a class="jxr_linenumber" name="L723" href="#L723">723</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L724" href="#L724">724</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L725" href="#L725">725</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L726" href="#L726">726</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> isMfaEnabled(<strong class="jxr_keyword">boolean</strong> isMfaEnabled) {
+<a class="jxr_linenumber" name="L726" href="#L726">726</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> isMfaEnabled(<strong class="jxr_keyword">boolean</strong> isMfaEnabled) {
 <a class="jxr_linenumber" name="L727" href="#L727">727</a>       <strong class="jxr_keyword">this</strong>.isMfaEnabled = isMfaEnabled;
 <a class="jxr_linenumber" name="L728" href="#L728">728</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L729" href="#L729">729</a>     }
@@ -743,7 +743,7 @@
 <a class="jxr_linenumber" name="L735" href="#L735">735</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L736" href="#L736">736</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L737" href="#L737">737</a>     @JsonProperty(<span class="jxr_string">"mfa_enabled"</span>)
-<a class="jxr_linenumber" name="L738" href="#L738">738</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> isMfaEnabled(Optional&lt;Boolean&gt; isMfaEnabled) {
+<a class="jxr_linenumber" name="L738" href="#L738">738</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> isMfaEnabled(Optional&lt;Boolean&gt; isMfaEnabled) {
 <a class="jxr_linenumber" name="L739" href="#L739">739</a>       <strong class="jxr_keyword">this</strong>.isMfaEnabled = isMfaEnabled.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L740" href="#L740">740</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L741" href="#L741">741</a>     }
@@ -754,7 +754,7 @@
 <a class="jxr_linenumber" name="L746" href="#L746">746</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L747" href="#L747">747</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L748" href="#L748">748</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L749" href="#L749">749</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> isVerified(<strong class="jxr_keyword">boolean</strong> isVerified) {
+<a class="jxr_linenumber" name="L749" href="#L749">749</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> isVerified(<strong class="jxr_keyword">boolean</strong> isVerified) {
 <a class="jxr_linenumber" name="L750" href="#L750">750</a>       <strong class="jxr_keyword">this</strong>.isVerified = isVerified;
 <a class="jxr_linenumber" name="L751" href="#L751">751</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L752" href="#L752">752</a>     }
@@ -766,7 +766,7 @@
 <a class="jxr_linenumber" name="L758" href="#L758">758</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L759" href="#L759">759</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L760" href="#L760">760</a>     @JsonProperty(<span class="jxr_string">"verified"</span>)
-<a class="jxr_linenumber" name="L761" href="#L761">761</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> isVerified(Optional&lt;Boolean&gt; isVerified) {
+<a class="jxr_linenumber" name="L761" href="#L761">761</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> isVerified(Optional&lt;Boolean&gt; isVerified) {
 <a class="jxr_linenumber" name="L762" href="#L762">762</a>       <strong class="jxr_keyword">this</strong>.isVerified = isVerified.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L763" href="#L763">763</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L764" href="#L764">764</a>     }
@@ -777,7 +777,7 @@
 <a class="jxr_linenumber" name="L769" href="#L769">769</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L770" href="#L770">770</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L771" href="#L771">771</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L772" href="#L772">772</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> email(String email) {
+<a class="jxr_linenumber" name="L772" href="#L772">772</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> email(String email) {
 <a class="jxr_linenumber" name="L773" href="#L773">773</a>       <strong class="jxr_keyword">this</strong>.email = Objects.requireNonNull(email, <span class="jxr_string">"email"</span>);
 <a class="jxr_linenumber" name="L774" href="#L774">774</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L775" href="#L775">775</a>     }
@@ -789,7 +789,7 @@
 <a class="jxr_linenumber" name="L781" href="#L781">781</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L782" href="#L782">782</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L783" href="#L783">783</a>     @JsonProperty(<span class="jxr_string">"email"</span>)
-<a class="jxr_linenumber" name="L784" href="#L784">784</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUnavailableGuild.html">Builder</a> email(Optional&lt;String&gt; email) {
+<a class="jxr_linenumber" name="L784" href="#L784">784</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableRole.html">Builder</a> email(Optional&lt;String&gt; email) {
 <a class="jxr_linenumber" name="L785" href="#L785">785</a>       <strong class="jxr_keyword">this</strong>.email = email.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L786" href="#L786">786</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L787" href="#L787">787</a>     }
