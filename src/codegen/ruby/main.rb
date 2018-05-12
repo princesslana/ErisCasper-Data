@@ -3,6 +3,7 @@ require 'fileutils'
 require_relative 'event_types'
 require_relative 'java_types'
 require_relative 'def/event'
+require_relative 'def/event_factory'
 require_relative 'def/event_wrapper'
 require_relative 'def/resource'
 
@@ -38,6 +39,9 @@ EVENTS.each do |evt, dat|
   puts "Generating #{BASE_PACKAGE}.event.#{clz.name}..."
   clz.write(BASE_PACKAGE + ".event")  
 end
+
+puts "Generating #{BASE_PACKAGE}.event.EventFactory..."
+EventFactoryDef.new(EVENTS).write(BASE_PACKAGE + ".event")
 
 puts "Done."
 
