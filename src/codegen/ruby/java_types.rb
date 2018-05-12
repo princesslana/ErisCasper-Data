@@ -42,7 +42,8 @@ TYPES = {
   'snowflake' => 'Snowflake',
   'string' => 'String',
   'timestamps object' => 'ActivityTimestamps',
-  'user object' => 'User'
+  'user object' => 'User',
+  'user id object' => 'UserId'
 }
 
 def get_java_type(t)

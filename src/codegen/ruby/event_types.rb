@@ -27,7 +27,7 @@ EVENTS = {
   message_reaction_add: 'MessageReactionAddEventData',
   message_reaction_remove: 'MessageReactionRemoveEventData',
   message_reaction_remove_all: 'MessageReactionRemoveAllEventData',
-  presence_update: 'PresenceUpdateEventData',
+  presence_update: 'PresenceUpdate',
   typing_start: 'TypingStartEventData',
   user_update: 'User',
   voice_state_update: 'VoiceState',

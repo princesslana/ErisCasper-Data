@@ -1,5 +1,5 @@
-user	user object	the user presence is being updated for
-roles	array of snowflakes	roles this user is in
+user	user id object	the user presence is being updated for
+roles?	array of snowflakes	roles this user is in
 game	?activity object	null, or the user's current activity
-guild_id	snowflake	id of the guild
-status	string	either "idle", "dnd", "online", or "offline"
+guild_id?	snowflake	id of the guild
+status?	string	either "idle", "dnd", "online", or "offline"
