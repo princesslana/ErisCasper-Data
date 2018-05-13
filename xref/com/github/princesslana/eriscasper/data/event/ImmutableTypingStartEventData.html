@@ -165,7 +165,7 @@
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>   @Deprecated
 <a class="jxr_linenumber" name="L158" href="#L158">158</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L160" href="#L160">160</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/GuildEmojisUpdateEvent.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/TypingStartEventData.html">TypingStartEventData</a> {
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleCreateEventData.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/TypingStartEventData.html">TypingStartEventData</a> {
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId;
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> userId;
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>     @Nullable Long timestamp;
@@ -196,7 +196,7 @@
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L189" href="#L189">189</a>   @Deprecated
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L191" href="#L191">191</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableTypingStartEventData.html">ImmutableTypingStartEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/GuildEmojisUpdateEvent.html">Json</a> json) {
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableTypingStartEventData.html">ImmutableTypingStartEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleCreateEventData.html">Json</a> json) {
 <a class="jxr_linenumber" name="L192" href="#L192">192</a>     ImmutableTypingStartEventData.Builder builder = ImmutableTypingStartEventData.builder();
 <a class="jxr_linenumber" name="L193" href="#L193">193</a>     <strong class="jxr_keyword">if</strong> (json.channelId != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L194" href="#L194">194</a>       builder.channelId(json.channelId);

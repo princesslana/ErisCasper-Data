@@ -138,7 +138,7 @@
 <a class="jxr_linenumber" name="L130" href="#L130">130</a>   @Deprecated
 <a class="jxr_linenumber" name="L131" href="#L131">131</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L132" href="#L132">132</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L133" href="#L133">133</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/GuildEmojisUpdateEvent.html">Json</a>
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleCreateEventData.html">Json</a>
 <a class="jxr_linenumber" name="L134" href="#L134">134</a>       <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageReactionRemoveAllEventData.html">MessageReactionRemoveAllEventData</a> {
 <a class="jxr_linenumber" name="L135" href="#L135">135</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId;
 <a class="jxr_linenumber" name="L136" href="#L136">136</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> messageId;
@@ -163,7 +163,7 @@
 <a class="jxr_linenumber" name="L155" href="#L155">155</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L156" href="#L156">156</a>   @Deprecated
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L158" href="#L158">158</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageReactionRemoveAllEventData.html">ImmutableMessageReactionRemoveAllEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/GuildEmojisUpdateEvent.html">Json</a> json) {
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageReactionRemoveAllEventData.html">ImmutableMessageReactionRemoveAllEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleCreateEventData.html">Json</a> json) {
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>     ImmutableMessageReactionRemoveAllEventData.Builder builder = ImmutableMessageReactionRemoveAllEventData.builder();
 <a class="jxr_linenumber" name="L160" href="#L160">160</a>     <strong class="jxr_keyword">if</strong> (json.channelId != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>       builder.channelId(json.channelId);
