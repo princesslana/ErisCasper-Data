@@ -4,7 +4,6 @@ import com.github.princesslana.eriscasper.data.DataAssert;
 import com.github.princesslana.eriscasper.data.Snowflake;
 import com.google.common.collect.ImmutableList;
 import java.util.Optional;
-import org.testng.annotations.Test;
 
 public class TestMessage {
 
@@ -13,7 +12,6 @@ public class TestMessage {
    *     href="https://discordapp.com/developers/docs/resources/channel#message-object-example-message">
    *     https://discordapp.com/developers/docs/resources/channel#message-object-example-message</a>
    */
-  @Test
   public void fromJson_whenExamplePayload_shouldDeseralize() {
     User expectedAuthor =
         ImmutableUser.builder()
@@ -29,7 +27,6 @@ public class TestMessage {
         .hasFieldOrPropertyWithValue("content", Optional.of("Supa Hot"));
   }
 
-  @Test
   public void fromJson_whenPongEmbedPayload_shouldDeserialize() {
     Embed expectedEmbed = ImmutableEmbed.builder().type("rich").title("pong").build();
 

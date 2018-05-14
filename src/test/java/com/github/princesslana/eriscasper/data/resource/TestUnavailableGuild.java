@@ -3,7 +3,6 @@ package com.github.princesslana.eriscasper.data.resource;
 import com.github.princesslana.eriscasper.data.DataAssert;
 import com.github.princesslana.eriscasper.data.Snowflake;
 import java.util.Optional;
-import org.testng.annotations.Test;
 
 public class TestUnavailableGuild {
 
@@ -12,7 +11,6 @@ public class TestUnavailableGuild {
    *     href="https://discordapp.com/developers/docs/resources/guild#unavailable-guild-object-example-unavailable-guild">
    *     https://discordapp.com/developers/docs/resources/guild#unavailable-guild-object-example-unavailable-guild</a>
    */
-  @Test
   public void fromJson_whenExamplePayload_shouldDeseralize() {
     String payload = "{ \"id\": \"41771983423143937\", \"unavailable\": true }";
 

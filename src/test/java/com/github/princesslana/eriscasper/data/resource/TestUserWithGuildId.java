@@ -3,10 +3,8 @@ package com.github.princesslana.eriscasper.data.resource;
 import com.github.princesslana.eriscasper.data.DataAssert;
 import com.github.princesslana.eriscasper.data.Snowflake;
 import java.util.Optional;
-import org.testng.annotations.Test;
 
 public class TestUserWithGuildId {
-  @Test
   public void fromJson_whenValidPayload_shouldDeserialize() {
     String payload =
         "{     \"username\"     :\"LaBotuel\","

@@ -3,11 +3,9 @@ package com.github.princesslana.eriscasper.data.resource;
 import com.github.princesslana.eriscasper.data.DataAssert;
 import com.github.princesslana.eriscasper.data.Snowflake;
 import java.util.Optional;
-import org.testng.annotations.Test;
 
 public class TestUser {
 
-  @Test
   public void fromJson_whenValidPayload_shouldDeserialize() {
     String payload =
         "{     \"username\"     :\"LaBotuel\","
@@ -32,7 +30,6 @@ public class TestUser {
    * @see <a href="https://discordapp.com/developers/docs/resources/user#user-object-example-user">
    *     https://discordapp.com/developers/docs/resources/user#user-object-example-user</a>
    */
-  @Test
   public void fromJson_whenExamplePayload_shouldDeseralize() {
     String payload =
         "{     \"id\"           : \"80351110224678912\","
