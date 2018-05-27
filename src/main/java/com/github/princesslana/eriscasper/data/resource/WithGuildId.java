@@ -11,6 +11,11 @@ public abstract class WithGuildId<T> {
 
   private final T value;
 
+  public WithGuildId(Snowflake guildId, T value) {
+    this.guildId = guildId;
+    this.value = value;
+  }
+
   protected WithGuildId(Class<T> clazz, JsonNode json) throws DataException {
     guildId = Snowflake.of(json.get("guild_id").asText());
     value = Data.fromJson(json, clazz);
