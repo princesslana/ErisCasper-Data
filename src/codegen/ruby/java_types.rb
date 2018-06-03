@@ -7,7 +7,7 @@ TYPES = {
   'account object' => 'IntegrationAccount',
   'activity object' => 'Activity',
   'array of audit log change objects' => 'ImmutableList<AuditLogChange>',
-  'array of audit log entry objects' => 'ImmutableList<AuditLogEntry>'
+  'array of audit log entry objects' => 'ImmutableList<AuditLogEntry>',
   'array of attachment objects' => 'ImmutableList<Attachment>',
   'array of channel objects' => 'ImmutableList<Channel>',
   'array of DM channel objects' => 'ImmutableList<Channel>',
@@ -52,7 +52,7 @@ TYPES = {
   'string' => 'String',
   'timestamps object' => 'ActivityTimestamps',
   'user object' => 'User',
-  'user id object' => 'UserId',
+  'user id object' => 'UserId'
 }
 
 def get_java_type(t)
