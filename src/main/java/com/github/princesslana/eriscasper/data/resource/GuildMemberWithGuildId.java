@@ -8,15 +8,12 @@ import com.github.princesslana.eriscasper.data.Snowflake;
 
 public class GuildMemberWithGuildId {
 
-  private Snowflake guildId;
-  private GuildMember member;
+  private final Snowflake guildId;
+  private final GuildMember member;
 
-  private GuildMemberWithGuildId() {}
-
-  @JsonCreator
-  public GuildMemberWithGuildId(JsonNode json) throws DataException {
-    guildId = Snowflake.of(json.get("guild_id").asText());
-    member = Data.fromJson(json, GuildMember.class);
+  public GuildMemberWithGuildId(Snowflake guildId, GuildMember member) {
+    this.guildId = guildId;
+    this.member = member;
   }
 
   public Snowflake getGuildId() {
@@ -28,10 +25,10 @@ public class GuildMemberWithGuildId {
     return member;
   }
 
-  public static GuildMemberWithGuildId from(Snowflake guildId, GuildMember member) {
-    GuildMemberWithGuildId guildMember = new GuildMemberWithGuildId();
-    guildMember.guildId = guildId;
-    guildMember.member = member;
-    return guildMember;
+  @JsonCreator
+  public static GuildMemberWithGuildId fromJson(JsonNode node) throws DataException {
+    Snowflake guildId = Snowflake.of(node.get("guild_id").asText());
+    GuildMember member = Data.fromJson(node, GuildMember.class);
+    return new GuildMemberWithGuildId(guildId, member);
   }
 }
