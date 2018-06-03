@@ -1,0 +1,12 @@
+code	string	the invite code (unique ID)
+guild	partial guild object	the guild this invite is for
+channel	partial channel object	the channel this invite is for
+approximate_presence_count?	int	approximate count of online members
+approximate_member_count?	int	approximate count of total members
+inviter	a user object	user who created the invite
+uses	integer	number of times this invite has been used
+max_uses	integer	max number of times this invite can be used
+max_age	integer	duration (in seconds) after which the invite expires
+temporary	bool	whether this invite only grants temporary membership
+created_at	string	when this invite was created
+revoked	bool	whether this invite is revoked

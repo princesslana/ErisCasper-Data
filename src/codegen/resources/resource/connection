@@ -1,0 +1,5 @@
+id	string	id of the connection account
+name	string	the username of the connection account
+type	string	the service of the connection (twitch, youtube)
+revoked	bool	whether the connection is revoked
+integrations	array of integrations	an array of partial server integrations
