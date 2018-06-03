@@ -9,12 +9,15 @@ public class TestGuildMemberWithGuildId {
   @Test
   public void fromJson_whenValidPayload_shouldDeserialize() {
     String payload =
-        "{      \"user\":{ "
-            + "\"username\"     :\"LaBotuel\","
-            + "\"id\"           :\"417388135027048495\","
-            + "\"discriminator\":\"7013\","
-            + "\"bot\"          :true,"
-            + "\"avatar\"       :null},"
+        "{"
+            + "\"user\":"
+            + "{"
+            + "   \"username\"     :\"LaBotuel\","
+            + "   \"id\"           :\"417388135027048495\","
+            + "   \"discriminator\":\"7013\","
+            + "   \"bot\"          :true,"
+            + "   \"avatar\"       :null"
+            + "},"
             + "\"joined_at\":\"2018-06-03T10:59:19.884195-04:00\","
             + "\"deaf\":false,"
             + "\"mute\":false,"
