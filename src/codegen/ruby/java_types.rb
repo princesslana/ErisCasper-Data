@@ -24,6 +24,7 @@ TYPES = {
   'array of two integers (current_size, max_size)' => 'ImmutableList<Long>',
   'array of Unavailable Guild objects' => 'ImmutableList<UnavailableGuild>',
   'array of user objects' => 'ImmutableList<User>',
+  'array of webhook objects' => 'ImmutableList<Webhook>',
   'assets object' => 'ActivityAssets',
   'bool' => 'Boolean',
   'embed author object' => 'EmbedAuthor',
@@ -43,7 +44,15 @@ TYPES = {
   'string' => 'String',
   'timestamps object' => 'ActivityTimestamps',
   'user object' => 'User',
-  'user id object' => 'UserId'
+  'user id object' => 'UserId',
+  'partial guild object' => 'Guild',
+  'partial channel object' => 'Channel',
+  'account object' => 'IntegrationAccount',
+  'array of integrations' => 'ImmutableList<Integration>',
+  'array of audit log change objects' => 'ImmutableList<AuditLogChange>',
+  'optional audit entry info' => 'OptionalAuditEntryInfo',
+  'audit log event' => 'Integer',
+  'array of audit log entry objects' => 'ImmutableList<AuditLogEntry>'
 }
 
 def get_java_type(t)
