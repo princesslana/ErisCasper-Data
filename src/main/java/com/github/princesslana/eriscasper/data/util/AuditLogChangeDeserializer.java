@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> {
 
-  AuditLogChangeDeserializer() {
+  public AuditLogChangeDeserializer() {
     this(null);
   }
 
@@ -33,8 +33,7 @@ public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> 
     try {
       return parseJson(node);
     } catch (DataException e) {
-      e.printStackTrace();
-      return ImmutableAuditLogChange.builder().isArray(false).key("--").build();
+      throw context.instantiationException(AuditLogChange.class, e);
     }
   }
 
@@ -147,19 +146,10 @@ public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> 
   }
 
   private <T> T parse(JsonNode node, Class<T> clazz) {
-    if (clazz.isInstance(Integer.class)) {
-      return clazz.cast(node.asInt());
-    } else if (clazz.isInstance(String.class)) {
-      return clazz.cast(node.textValue());
-    } else if (clazz.isInstance(Boolean.class)) {
-      return clazz.cast(node.asBoolean());
-    } else {
-      try {
-        return Data.fromJson(node, clazz);
-      } catch (DataException ex) {
-        System.out.println("Returning null node...");
-        return null;
-      }
+    try {
+      return Data.fromJson(node, clazz);
+    } catch (DataException e) {
+      return null;
     }
   }
 }
