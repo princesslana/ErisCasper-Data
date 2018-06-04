@@ -106,7 +106,6 @@ public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> 
       oldValue = parse(node.get("old_value"), clazz);
     }
     return ImmutableAuditLogChange.builder()
-        .isArray(false)
         .key(key)
         .newValue(Optional.ofNullable(newValue))
         .oldValue(Optional.ofNullable(oldValue))
@@ -123,7 +122,6 @@ public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> 
       oldValue = parseArray(node.get("old_value"), clazz);
     }
     return ImmutableAuditLogChange.builder()
-        .isArray(true)
         .key(key)
         .newValue(newValue)
         .oldValue(oldValue)
