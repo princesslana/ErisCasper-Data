@@ -121,11 +121,7 @@ public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> 
     if (node.has("old_value")) {
       oldValue = parseArray(node.get("old_value"), clazz);
     }
-    return ImmutableAuditLogChange.builder()
-        .key(key)
-        .newValue(newValue)
-        .oldValue(oldValue)
-        .build();
+    return ImmutableAuditLogChange.builder().key(key).newValue(newValue).oldValue(oldValue).build();
   }
 
   private <T> ImmutableList<T> parseArray(JsonNode node, Class<T> clazz) {
