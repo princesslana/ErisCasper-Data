@@ -12,7 +12,6 @@ public class TestAuditLogChange {
     DataAssert.thatFromJson(payload, AuditLogChange.class)
         .hasFieldOrPropertyWithValue("key", "nick")
         .hasFieldOrPropertyWithValue("oldValue", Optional.of("SomeNick"))
-        .hasFieldOrPropertyWithValue("newValue", Optional.empty())
-        .hasFieldOrPropertyWithValue("array", false);
+        .hasFieldOrPropertyWithValue("newValue", Optional.empty());
   }
 }
