@@ -1,0 +1,2 @@
+reason	?string	the reason for the ban
+user	user object	the banned user

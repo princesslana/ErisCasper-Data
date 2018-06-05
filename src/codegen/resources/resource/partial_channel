@@ -1,0 +1,10 @@
+type	integer	the type of channel
+position?	integer	sorting position of the channel
+permission_overwrites?	array of overwrite objects	explicit permission overwrites for members and roles
+name	string	the name of the channel (2-100 characters)
+topic?	string	the channel topic (0-1024 characters)
+nsfw?	bool	if the channel is nsfw
+bitrate?	integer	the bitrate (in bits) of the voice channel
+user_limit?	integer	the user limit of the voice channel
+icon?	?string	icon hash
+owner_id?	snowflake	id of the DM creator

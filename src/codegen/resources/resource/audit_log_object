@@ -1,0 +1,3 @@
+webhooks	array of webhook objects	list of webhooks found in the audit log
+users	array of user objects	list of users found in the audit log
+audit_log_entries	array of audit log entry objects	list of audit log entires

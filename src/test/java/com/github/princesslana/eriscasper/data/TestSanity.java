@@ -1,4 +1,4 @@
-package com.github.princesslana.eriscasper;
+package com.github.princesslana.eriscasper.data;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
