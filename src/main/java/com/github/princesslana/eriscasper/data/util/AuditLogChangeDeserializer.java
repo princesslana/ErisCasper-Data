@@ -20,11 +20,7 @@ import java.util.Optional;
 public class AuditLogChangeDeserializer extends StdDeserializer<AuditLogChange> {
 
   public AuditLogChangeDeserializer() {
-    this(null);
-  }
-
-  private AuditLogChangeDeserializer(Class<?> vc) {
-    super(vc);
+    super((Class<?>) null);
   }
 
   @Override
