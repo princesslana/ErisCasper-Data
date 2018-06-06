@@ -2,16 +2,34 @@
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.github.princesslana.eriscasper.data.Data;
 import com.github.princesslana.eriscasper.data.DataException;
+import com.github.princesslana.eriscasper.data.Snowflake;
 
-public class GuildMemberWithGuildId extends WithGuildId&lt;GuildMember&gt; {
-  @JsonCreator
-  public GuildMemberWithGuildId(JsonNode json) throws DataException {
-<span class="nc" id="L10">    super(GuildMember.class, json);</span>
-<span class="nc" id="L11">  }</span>
+public class GuildMemberWithGuildId {
 
+  private final Snowflake guildId;
+  private final GuildMember member;
+
+<span class="fc" id="L14">  public GuildMemberWithGuildId(Snowflake guildId, GuildMember member) {</span>
+<span class="fc" id="L15">    this.guildId = guildId;</span>
+<span class="fc" id="L16">    this.member = member;</span>
+<span class="fc" id="L17">  }</span>
+
+  public Snowflake getGuildId() {
+<span class="fc" id="L20">    return guildId;</span>
+  }
+
+  @SuppressWarnings(&quot;unused&quot;)
   public GuildMember getGuildMember() {
-<span class="nc" id="L14">    return getValue();</span>
+<span class="nc" id="L25">    return member;</span>
+  }
+
+  @JsonCreator
+  public static GuildMemberWithGuildId fromJson(JsonNode node) throws DataException {
+<span class="fc" id="L30">    Snowflake guildId = Snowflake.of(node.get(&quot;guild_id&quot;).asText());</span>
+<span class="fc" id="L31">    GuildMember member = Data.fromJson(node, GuildMember.class);</span>
+<span class="fc" id="L32">    return new GuildMemberWithGuildId(guildId, member);</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

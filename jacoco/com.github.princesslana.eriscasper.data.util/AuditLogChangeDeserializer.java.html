@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuditLogChangeDeserializer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ErisCasper-Data</a> &gt; <a href="index.source.html" class="el_package">com.github.princesslana.eriscasper.data.util</a> &gt; <span class="el_source">AuditLogChangeDeserializer.java</span></div><h1>AuditLogChangeDeserializer.java</h1><pre class="source lang-java linenums">package com.github.princesslana.eriscasper.data.util;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.github.princesslana.eriscasper.data.Snowflake;
+import com.github.princesslana.eriscasper.data.resource.AuditLogChange;
+import com.github.princesslana.eriscasper.data.resource.ImmutableAuditLogChange;
+import com.github.princesslana.eriscasper.data.resource.Overwrite;
+import com.github.princesslana.eriscasper.data.resource.Role;
+import com.google.common.collect.ImmutableList;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Optional;
+
+public class AuditLogChangeDeserializer extends StdDeserializer&lt;AuditLogChange&gt; {
+
+  public AuditLogChangeDeserializer() {
+<span class="fc" id="L23">    super((Class&lt;?&gt;) null);</span>
+<span class="fc" id="L24">  }</span>
+
+  @Override
+  public AuditLogChange deserialize(JsonParser json, DeserializationContext context)
+      throws IOException {
+<span class="fc" id="L29">    JsonNode node = json.getCodec().readTree(json);</span>
+<span class="fc" id="L30">    return parseJson(node, context, json.getCodec());</span>
+  }
+
+  private AuditLogChange parseJson(JsonNode node, DeserializationContext context, ObjectCodec codec)
+      throws JsonProcessingException {
+<span class="fc" id="L35">    String key = node.get(&quot;key&quot;).textValue();</span>
+<span class="pc bpc" id="L36" title="6 of 7 branches missed.">    switch (key.toLowerCase()) {</span>
+      case &quot;$add&quot;:
+      case &quot;$remove&quot;:
+<span class="nc" id="L39">        return newArrayInstance(node, Role.class, key, codec);</span>
+      case &quot;permission_overwrites&quot;:
+<span class="nc" id="L41">        return newArrayInstance(node, Overwrite.class, key, codec);</span>
+      case &quot;owner_id&quot;:
+      case &quot;afk_channel_id&quot;:
+      case &quot;widget_channel_id&quot;:
+      case &quot;system_channel_id&quot;:
+      case &quot;channel_id&quot;:
+      case &quot;inviter_id&quot;:
+      case &quot;id&quot;:
+      case &quot;application_id&quot;:
+<span class="nc" id="L50">        return newInstance(node, Snowflake.class, key, codec);</span>
+      case &quot;widget_enabled&quot;:
+      case &quot;nsfw&quot;:
+      case &quot;temporary&quot;:
+      case &quot;deaf&quot;:
+      case &quot;mute&quot;:
+      case &quot;hoist&quot;:
+      case &quot;mentionable&quot;:
+<span class="nc" id="L58">        return newInstance(node, Boolean.class, key, codec);</span>
+      case &quot;permissions&quot;:
+      case &quot;color&quot;:
+      case &quot;allow&quot;:
+      case &quot;deny&quot;:
+      case &quot;max_uses&quot;:
+      case &quot;uses&quot;:
+      case &quot;max_age&quot;:
+      case &quot;afk_timeout&quot;:
+      case &quot;mfa_level&quot;:
+      case &quot;verification_level&quot;:
+      case &quot;explicit_content_filter&quot;:
+      case &quot;default_message_notifications&quot;:
+      case &quot;position&quot;:
+      case &quot;bitrate&quot;:
+      case &quot;prune_delete_days&quot;:
+<span class="nc" id="L74">        return newInstance(node, Integer.class, key, codec);</span>
+      case &quot;type&quot;:
+      case &quot;nick&quot;:
+      case &quot;avatar_hash&quot;:
+      case &quot;name&quot;:
+      case &quot;icon_hash&quot;:
+      case &quot;splash_hash&quot;:
+      case &quot;code&quot;:
+      case &quot;region&quot;:
+      case &quot;vanity_url_code&quot;:
+      case &quot;topic&quot;:
+<span class="fc" id="L85">        return newInstance(node, String.class, key, codec);</span>
+      default:
+        // just for stuff not represented by discord (like system_channel_id wasn't)
+        // we will catch them as they're reported, can't predict stuff with no documentation for it
+<span class="nc" id="L89">        throw context.instantiationException(</span>
+<span class="nc" id="L90">            AuditLogChange.class, &quot;Failed to load &quot; + key + &quot; from &quot; + node.asText());</span>
+    }
+  }
+
+  private &lt;T&gt; AuditLogChange newInstance(
+      JsonNode node, Class&lt;T&gt; clazz, String key, ObjectCodec codec) throws JsonProcessingException {
+<span class="fc" id="L96">    T newValue = null;</span>
+<span class="fc" id="L97">    T oldValue = null;</span>
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">    if (node.has(&quot;new_value&quot;)) {</span>
+<span class="nc" id="L99">      newValue = parse(node.get(&quot;new_value&quot;), clazz, codec);</span>
+    }
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">    if (node.has(&quot;old_value&quot;)) {</span>
+<span class="fc" id="L102">      oldValue = parse(node.get(&quot;old_value&quot;), clazz, codec);</span>
+    }
+<span class="fc" id="L104">    return ImmutableAuditLogChange.builder()</span>
+<span class="fc" id="L105">        .key(key)</span>
+<span class="fc" id="L106">        .newValue(Optional.ofNullable(newValue))</span>
+<span class="fc" id="L107">        .oldValue(Optional.ofNullable(oldValue))</span>
+<span class="fc" id="L108">        .build();</span>
+  }
+
+  private &lt;T&gt; AuditLogChange newArrayInstance(
+      JsonNode node, Class&lt;T&gt; clazz, String key, ObjectCodec codec) throws JsonProcessingException {
+<span class="nc" id="L113">    ImmutableList&lt;T&gt; newValue = ImmutableList.of();</span>
+<span class="nc" id="L114">    ImmutableList&lt;T&gt; oldValue = ImmutableList.of();</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">    if (node.has(&quot;new_value&quot;)) {</span>
+<span class="nc" id="L116">      newValue = parseArray(node.get(&quot;new_value&quot;), clazz, codec);</span>
+    }
+<span class="nc bnc" id="L118" title="All 2 branches missed.">    if (node.has(&quot;old_value&quot;)) {</span>
+<span class="nc" id="L119">      oldValue = parseArray(node.get(&quot;old_value&quot;), clazz, codec);</span>
+    }
+<span class="nc" id="L121">    return ImmutableAuditLogChange.builder().key(key).newValue(newValue).oldValue(oldValue).build();</span>
+  }
+
+  private &lt;T&gt; ImmutableList&lt;T&gt; parseArray(JsonNode node, Class&lt;T&gt; clazz, ObjectCodec codec)
+      throws JsonProcessingException {
+<span class="nc" id="L126">    ArrayNode array = (ArrayNode) node;</span>
+<span class="nc" id="L127">    ImmutableList.Builder&lt;T&gt; builder = ImmutableList.builder();</span>
+<span class="nc" id="L128">    Iterator&lt;JsonNode&gt; arrayTree = array.elements();</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">    while (arrayTree.hasNext()) {</span>
+<span class="nc" id="L130">      builder.add(parse(arrayTree.next(), clazz, codec));</span>
+    }
+<span class="nc" id="L132">    return builder.build();</span>
+  }
+
+  private &lt;T&gt; T parse(JsonNode node, Class&lt;T&gt; clazz, ObjectCodec codec)
+      throws JsonProcessingException {
+<span class="fc" id="L137">    return codec.treeToValue(node, clazz);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
