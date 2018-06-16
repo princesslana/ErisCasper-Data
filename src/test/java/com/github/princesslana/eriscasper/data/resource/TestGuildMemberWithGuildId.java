@@ -31,7 +31,7 @@ public class TestGuildMemberWithGuildId {
         .hasFieldOrPropertyWithValue("member.mute", false)
         .hasFieldOrPropertyWithValue("member.user.username", "LaBotuel")
         .hasFieldOrPropertyWithValue("member.user.discriminator", "7013")
-        .hasFieldOrPropertyWithValue("member.user.avatar", Optional.empty())
+        .hasFieldOrPropertyWithValue("member.user.avatar", null)
         .hasFieldOrPropertyWithValue("member.user.bot", Optional.of(true))
         .hasFieldOrPropertyWithValue("member.user.mfaEnabled", Optional.empty())
         .hasFieldOrPropertyWithValue("member.user.verified", Optional.empty())

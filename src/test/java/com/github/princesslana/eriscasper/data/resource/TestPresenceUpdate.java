@@ -17,6 +17,7 @@ public class TestPresenceUpdate {
     DataAssert.thatFromJson(payload, PresenceUpdate.class)
         .hasFieldOrPropertyWithValue("user.id", Snowflake.of("215210079148834816"))
         .hasFieldOrPropertyWithValue("status", Optional.of("online"))
-        .hasFieldOrPropertyWithValue("game", Optional.empty());
+        .hasFieldOrPropertyWithValue("game", null)
+        .hasFieldOrPropertyWithValue("guildId", Optional.empty());
   }
 }
