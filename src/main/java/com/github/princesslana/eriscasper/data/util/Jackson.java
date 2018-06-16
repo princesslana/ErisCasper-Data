@@ -16,7 +16,6 @@ public class Jackson {
     ObjectMapper jackson = new ObjectMapper();
     jackson.setDefaultPropertyInclusion(
         JsonInclude.Value.construct(JsonInclude.Include.ALWAYS, JsonInclude.Include.ALWAYS)
-            .withValueFilter(ValueFilter.class));
             .withValueFilter(NotEmptyFilter.class)
             .withContentFilter(NotEmptyFilter.class));
     jackson.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
