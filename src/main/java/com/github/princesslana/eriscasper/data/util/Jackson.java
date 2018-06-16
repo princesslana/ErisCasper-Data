@@ -17,6 +17,8 @@ public class Jackson {
     jackson.setDefaultPropertyInclusion(
         JsonInclude.Value.construct(JsonInclude.Include.ALWAYS, JsonInclude.Include.ALWAYS)
             .withValueFilter(ValueFilter.class));
+            .withValueFilter(NotEmptyFilter.class)
+            .withContentFilter(NotEmptyFilter.class));
     jackson.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     jackson.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
     jackson.registerModule(new GuavaModule());
@@ -25,7 +27,7 @@ public class Jackson {
     return jackson;
   }
 
-  private static class ValueFilter {
+  private static class NotEmptyFilter {
     @Override
     public boolean equals(Object rhs) {
       return Optional.empty().equals(rhs);
