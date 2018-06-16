@@ -9,9 +9,6 @@ class FieldDef
   end
   
   def optional?
-    # Lists are alreay optional - as the empty list
-    return false if type.include? 'array'
-    
     name.end_with?('?')
   end
   
