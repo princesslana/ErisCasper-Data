@@ -1,0 +1,4 @@
+guild_id	snowflake	id of the guild
+channel_id	?snowflake	id of the voice channel client wants to join (null if disconnecting)
+self_mute	bool	is the client muted
+self_deaf	bool	is the client deafened

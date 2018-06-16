@@ -24,7 +24,7 @@ class FieldDef
     
     prefix = "is" if type.start_with?('bool')
   
-    prefix + name.tr('?', '').split('_').collect(&:capitalize).join
+    prefix + name.tr('?$', '').split('_').collect(&:capitalize).join
   end
   
   def java_type

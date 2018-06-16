@@ -1,0 +1,3 @@
+guild_id	snowflake	id of the guild to get offline members for
+query	string	string that username starts with, or an empty string to return all members
+limit	integer	maximum number of members to send or 0 to request all members matched

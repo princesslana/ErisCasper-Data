@@ -2,11 +2,12 @@
 require_relative 'field'
 
 class ResourceDef
-  attr_reader :name, :fields
+  attr_reader :name, :fields, :imports
   
-  def initialize(name, fields)
-    @name = name
+  def initialize(name, fields, opts={})
+    @name = name + (opts[:suffix] || "")
     @fields = fields
+    @imports = opts[:imports] || []
   end
   
   def write(package)
@@ -18,13 +19,13 @@ class ResourceDef
       f.puts "package #{package};"
       f.puts
       
-      %w(
+      (%w(
         com.fasterxml.jackson.annotation.JsonProperty
         com.fasterxml.jackson.databind.annotation.JsonDeserialize
         com.github.princesslana.eriscasper.data.Snowflake
         com.google.common.collect.ImmutableList
         org.immutables.value.Value
-      ).each do |import|
+      ) + imports).each do |import|
         f.puts "import #{import};"
       end
       
@@ -39,13 +40,13 @@ class ResourceDef
     end
   end
 
-  def self.from_file(filename)
+  def self.from_file(filename, opts={})
     fields = []
 
     File.open(filename).each do |line|
       fields.push FieldDef.from_line(line)
     end
   
-    ResourceDef.new File.basename(filename).split('_').collect(&:capitalize).join, fields
+    ResourceDef.new File.basename(filename).split('_').collect(&:capitalize).join, fields, opts
   end
 end
