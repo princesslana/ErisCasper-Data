@@ -27,7 +27,8 @@ class FieldDef
   def java_type
     jt = get_java_type type.tr('?', '')
     
-    return "java.util.Optional<#{jt}>" if optional?
+    jt = "com.github.princesslana.eriscasper.data.util.Nullable<#{jt}>" if nullable?
+    jt = "java.util.Optional<#{jt}>" if optional?
     
     jt
   end
@@ -42,7 +43,6 @@ class FieldDef
     f.puts "  /**"
     f.puts "    * #{description}"
     f.puts "    */"
-    f.puts "  @javax.annotation.Nullable" if nullable?
     f.puts "  #{json_property_annotation}"
     f.puts "  #{java_type} #{java_name}();"
     f.puts

@@ -2,6 +2,7 @@ package com.github.princesslana.eriscasper.data.resource;
 
 import com.github.princesslana.eriscasper.data.DataAssert;
 import com.github.princesslana.eriscasper.data.Snowflake;
+import com.github.princesslana.eriscasper.data.util.Nullable;
 import java.util.Optional;
 import org.testng.annotations.Test;
 
@@ -31,7 +32,7 @@ public class TestGuildMemberWithGuildId {
         .hasFieldOrPropertyWithValue("member.mute", false)
         .hasFieldOrPropertyWithValue("member.user.username", "LaBotuel")
         .hasFieldOrPropertyWithValue("member.user.discriminator", "7013")
-        .hasFieldOrPropertyWithValue("member.user.avatar", null)
+        .hasFieldOrPropertyWithValue("member.user.avatar", Nullable.ofNull())
         .hasFieldOrPropertyWithValue("member.user.bot", Optional.of(true))
         .hasFieldOrPropertyWithValue("member.user.mfaEnabled", Optional.empty())
         .hasFieldOrPropertyWithValue("member.user.verified", Optional.empty())

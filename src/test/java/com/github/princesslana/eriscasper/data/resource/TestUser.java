@@ -2,6 +2,7 @@ package com.github.princesslana.eriscasper.data.resource;
 
 import com.github.princesslana.eriscasper.data.DataAssert;
 import com.github.princesslana.eriscasper.data.Snowflake;
+import com.github.princesslana.eriscasper.data.util.Nullable;
 import java.util.Optional;
 import org.testng.annotations.Test;
 
@@ -21,7 +22,7 @@ public class TestUser {
         .hasFieldOrPropertyWithValue("id", Snowflake.of("417388135027048495"))
         .hasFieldOrPropertyWithValue("username", "LaBotuel")
         .hasFieldOrPropertyWithValue("discriminator", "7013")
-        .hasFieldOrPropertyWithValue("avatar", null)
+        .hasFieldOrPropertyWithValue("avatar", Nullable.ofNull())
         .hasFieldOrPropertyWithValue("bot", Optional.of(true))
         .hasFieldOrPropertyWithValue("mfaEnabled", Optional.empty())
         .hasFieldOrPropertyWithValue("verified", Optional.empty())
@@ -47,7 +48,7 @@ public class TestUser {
         .hasFieldOrPropertyWithValue("id", Snowflake.of("80351110224678912"))
         .hasFieldOrPropertyWithValue("username", "Nelly")
         .hasFieldOrPropertyWithValue("discriminator", "1337")
-        .hasFieldOrPropertyWithValue("avatar", "8342729096ea3675442027381ff50dfe")
+        .hasFieldOrPropertyWithValue("avatar", Nullable.of("8342729096ea3675442027381ff50dfe"))
         .hasFieldOrPropertyWithValue("bot", Optional.empty())
         .hasFieldOrPropertyWithValue("mfaEnabled", Optional.empty())
         .hasFieldOrPropertyWithValue("verified", Optional.of(true))
