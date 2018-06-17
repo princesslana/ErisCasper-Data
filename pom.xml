@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.princesslana</groupId>
-  <artifactId>ErisCasper-Data</artifactId>
+  <artifactId>ErisCasper-Data-Parent</artifactId>
   <version>${revision}</version>
-  <packaging>jar</packaging>
-  <name>ErisCasper-Data</name>
+  <packaging>pom</packaging>
+  <name>ErisCasper-Data-Parent</name>
   <description>Data class for Discord API</description>
   <url>https://github.com/princesslana/ErisCasper-Data</url>
   <licenses>
@@ -23,6 +23,9 @@
       <url>https://github.com/ianagbip1oti</url>
     </developer>
   </developers>
+  <modules>
+    <module>data</module>
+  </modules>
   <scm>
     <url>https://github.com/princesslana/ErisCasper-Data</url>
   </scm>
@@ -34,11 +37,6 @@
   </distributionManagement>
   <properties>
     <revision>0-SNAPSHOT</revision>
-    <exec.logLevel>debug</exec.logLevel>
-    <surefire.logLevel>off</surefire.logLevel>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <lib.assertj.version>3.9.0</lib.assertj.version>
     <lib.errorprone.version>2.1.3</lib.errorprone.version>
     <lib.jsr305.version>1.3.9</lib.jsr305.version>
@@ -46,29 +44,8 @@
     <lib.immutables.version>2.5.5</lib.immutables.version>
     <lib.jackson.version>2.9.4</lib.jackson.version>
     <lib.testng.version>6.14.2</lib.testng.version>
-    <plugin.build-helper.version>3.0.0</plugin.build-helper.version>
-    <plugin.clean.version>3.0.0</plugin.clean.version>
-    <plugin.compiler.version>3.7.0</plugin.compiler.version>
-    <plugin.deploy.version>2.8.2</plugin.deploy.version>
-    <plugin.dependency.version>3.0.2</plugin.dependency.version>
     <plugin.enforcer.version>3.0.0-M1</plugin.enforcer.version>
-    <plugin.github-site.version>0.12</plugin.github-site.version>
-    <plugin.gpg.version>1.6</plugin.gpg.version>
-    <plugin.install.version>2.5.2</plugin.install.version>
-    <plugin.jar.version>3.0.2</plugin.jar.version>
-    <plugin.jacoco.version>0.8.0</plugin.jacoco.version>
-    <plugin.javadoc.version>3.0.0</plugin.javadoc.version>
-    <plugin.jruby.version>1.1.5</plugin.jruby.version>
-    <plugin.jxr.version>2.5</plugin.jxr.version>
-    <plugin.nexus-staging.version>1.6.7</plugin.nexus-staging.version>
-    <plugin.pmd.version>3.9.0</plugin.pmd.version>
-    <plugin.project-info-reports.version>2.9</plugin.project-info-reports.version>
-    <plugin.resources.version>3.0.2</plugin.resources.version>
-    <plugin.site.version>3.7</plugin.site.version>
     <plugin.sortpom.version>2.8.0</plugin.sortpom.version>
-    <plugin.source.version>3.0.1</plugin.source.version>
-    <plugin.spotless.version>1.0.0.BETA2</plugin.spotless.version>
-    <plugin.surefire.version>2.20.1</plugin.surefire.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -79,14 +56,10 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-    <dependency>
+      <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>${lib.assertj.version}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.errorprone</groupId>
@@ -99,36 +72,6 @@
       <version>${lib.guava.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-guava</artifactId>
-      <exclusions>
-        <exclusion>
-          <artifactId>guava</artifactId>
-          <groupId>com.google.guava</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr310</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jdk8</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
       <version>${lib.jsr305.version}</version>
@@ -137,74 +80,16 @@
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>${lib.testng.version}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.immutables</groupId>
       <artifactId>value</artifactId>
       <version>${lib.immutables.version}</version>
-      <scope>provided</scope>
-      <!-- compile only -->
     </dependency>
-  </dependencies>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>${plugin.build-helper.version}</version>
-        <executions>
-          <execution>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>target/generated-sources/data</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>${plugin.clean.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${plugin.compiler.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>${plugin.dependency.version}</version>
-        <executions>
-          <execution>
-            <phase>verify</phase>
-            <goals>
-              <goal>analyze-only</goal>
-              <goal>analyze-duplicate</goal>
-              <goal>analyze-dep-mgt</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <failOnWarning>true</failOnWarning>
-          <ignoreNonCompile>false</ignoreNonCompile>
-          <ignoredUnusedDeclaredDependencies>
-            <!-- On the test classpath to produce log output during tests -->
-            <ignoredUnusedDeclaredDependency>org.slf4j:slf4j-simple</ignoredUnusedDeclaredDependency>
-          </ignoredUnusedDeclaredDependencies>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>${plugin.deploy.version}</version>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -222,67 +107,12 @@
           <failFast>false</failFast>
           <rules>
             <dependencyConvergence></dependencyConvergence>
+            <reactorModuleConvergence></reactorModuleConvergence>
             <requireReleaseDeps>
               <onlyWhenRelease>true</onlyWhenRelease>
             </requireReleaseDeps>
-            <requirePluginVersions></requirePluginVersions>
           </rules>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${plugin.jacoco.version}</version>
-        <executions>
-          <execution>
-            <id>prepare-agent</id>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>jacoco-report</id>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>${plugin.jar.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>de.saumya.mojo</groupId>
-        <artifactId>jruby-maven-plugin</artifactId>
-        <version>${plugin.jruby.version}</version>
-        <executions>
-          <execution>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>jruby</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <file>src/codegen/ruby/main.rb</file>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>${plugin.install.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>${plugin.resources.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>${plugin.site.version}</version>
       </plugin>
       <plugin>
         <groupId>com.github.ekryd.sortpom</groupId>
@@ -301,135 +131,6 @@
           <verifyFail>Stop</verifyFail>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>${plugin.spotless.version}</version>
-        <executions>
-          <execution>
-            <phase>verify</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <java>
-            <googleJavaFormat>
-              <version>1.5</version>
-              <style>GOOGLE</style>
-            </googleJavaFormat>
-          </java>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${plugin.surefire.version}</version>
-        <configuration>
-          <trimStackTrace>false</trimStackTrace>
-          <systemPropertyVariables>
-            <org.slf4j.simpleLogger.defaultLogLevel>${surefire.logLevel}</org.slf4j.simpleLogger.defaultLogLevel>
-          </systemPropertyVariables>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${plugin.jacoco.version}</version>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <!-- explicit to avoid redundant aggregate report -->
-              <report>report</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${plugin.javadoc.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>${plugin.jxr.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${plugin.project-info-reports.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>${plugin.surefire.version}</version>
-      </plugin>
-    </plugins>
-  </reporting>
-  <profiles>
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>${plugin.gpg.version}</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>${plugin.javadoc.version}</version>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>${plugin.nexus-staging.version}</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>${plugin.source.version}</version>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>
