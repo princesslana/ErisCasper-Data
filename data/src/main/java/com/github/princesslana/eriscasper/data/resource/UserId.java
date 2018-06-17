@@ -2,7 +2,7 @@ package com.github.princesslana.eriscasper.data.resource;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.github.princesslana.eriscasper.data.Snowflake;
+import com.github.princesslana.eriscasper.types.Snowflake;
 import org.immutables.value.Value;
 
 @Value.Immutable

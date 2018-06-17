@@ -1,4 +1,4 @@
-package com.github.princesslana.eriscasper.data.immutable;
+package com.github.princesslana.eriscasper.types.immutable;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import org.immutables.value.Value;

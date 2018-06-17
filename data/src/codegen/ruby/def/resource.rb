@@ -21,7 +21,7 @@ class ResourceDef
       %w(
         com.fasterxml.jackson.annotation.JsonProperty
         com.fasterxml.jackson.databind.annotation.JsonDeserialize
-        com.github.princesslana.eriscasper.data.Snowflake
+        com.github.princesslana.eriscasper.types.Snowflake
         com.google.common.collect.ImmutableList
         org.immutables.value.Value
       ).each do |import|

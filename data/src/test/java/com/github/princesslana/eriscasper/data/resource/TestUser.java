@@ -1,7 +1,7 @@
 package com.github.princesslana.eriscasper.data.resource;
 
 import com.github.princesslana.eriscasper.data.DataAssert;
-import com.github.princesslana.eriscasper.data.Snowflake;
+import com.github.princesslana.eriscasper.types.Snowflake;
 import java.util.Optional;
 import org.testng.annotations.Test;
 

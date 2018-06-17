@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.princesslana.eriscasper.data.Data;
 import com.github.princesslana.eriscasper.data.DataException;
-import com.github.princesslana.eriscasper.data.Snowflake;
+import com.github.princesslana.eriscasper.types.Snowflake;
 
 public class GuildMemberWithGuildId {
 
