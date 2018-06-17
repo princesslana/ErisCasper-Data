@@ -6,6 +6,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class Nullable<T> {
 
@@ -13,6 +15,22 @@ public class Nullable<T> {
 
   private Nullable(Optional<T> value) {
     this.value = value;
+  }
+
+  public <U> Nullable<U> flatMap(Function<? super T, Nullable<U>> f) {
+    return isNull() ? Nullable.<U>ofNull() : f.apply(value.get());
+  }
+
+  public <U> Nullable<U> map(Function<? super T, ? extends U> f) {
+    return of(value.map(f));
+  }
+
+  public boolean isNull() {
+    return !value.isPresent();
+  }
+
+  public void ifNotNull(Consumer<? super T> c) {
+    value.ifPresent(c);
   }
 
   @JsonValue
