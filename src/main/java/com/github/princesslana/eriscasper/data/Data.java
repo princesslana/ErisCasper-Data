@@ -27,4 +27,12 @@ public class Data {
       throw new DataException(e);
     }
   }
+
+  public static String toJsonString(Object obj) throws DataException {
+    try {
+      return jackson.writeValueAsString(obj);
+    } catch (JsonProcessingException e) {
+      throw new DataException(e);
+    }
+  }
 }
