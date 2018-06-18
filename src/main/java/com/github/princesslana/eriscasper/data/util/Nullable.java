@@ -29,7 +29,11 @@ public class Nullable<T> {
     return !value.isPresent();
   }
 
-  public void ifNotNull(Consumer<? super T> c) {
+  public boolean isPresent() {
+    return value.isPresent();
+  }
+
+  public void ifPresent(Consumer<? super T> c) {
     value.ifPresent(c);
   }
 
