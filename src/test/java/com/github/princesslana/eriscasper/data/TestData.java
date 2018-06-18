@@ -1,6 +1,7 @@
 package com.github.princesslana.eriscasper.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.princesslana.eriscasper.data.util.Nullable;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
@@ -18,6 +19,18 @@ public class TestData {
   @Test
   public void toJsonString_whenNull_shouldInclude() throws DataException {
     Assertions.assertThat(Data.toJsonString(Obj.of(null))).isEqualTo("{\"field\":null}");
+  }
+
+  @Test
+  public void toJsonString_whenNullableOfNull_shouldInclude() throws DataException {
+    Assertions.assertThat(Data.toJsonString(Obj.of(Optional.of(Nullable.ofNull()))))
+        .isEqualTo("{\"field\":null}");
+  }
+
+  @Test
+  public void toJsonString_whenNullableOfValue_shouldInclude() throws DataException {
+    Assertions.assertThat(Data.toJsonString(Obj.of(Optional.of(Nullable.of("value")))))
+        .isEqualTo("{\"field\":\"value\"}");
   }
 
   @Test
