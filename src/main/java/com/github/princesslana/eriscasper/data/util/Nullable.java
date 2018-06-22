@@ -11,6 +11,8 @@ import java.util.function.Function;
 
 public class Nullable<T> {
 
+  private static final Nullable<?> NULL = new Nullable<>(Optional.empty());
+
   private final Optional<T> value;
 
   private Nullable(Optional<T> value) {
@@ -73,8 +75,9 @@ public class Nullable<T> {
     return new Nullable<>(value);
   }
 
+  @SuppressWarnings("unchecked")
   public static <T> Nullable<T> ofNull() {
-    return of(Optional.empty());
+    return (Nullable<T>) NULL;
   }
 
   public static <T> Nullable<T> of(T value) {
@@ -84,6 +87,6 @@ public class Nullable<T> {
 
   @JsonCreator
   public static <T> Nullable<T> ofNullable(@javax.annotation.Nullable T value) {
-    return of(Optional.ofNullable(value));
+    return value == null ? ofNull() : of(value);
   }
 }
