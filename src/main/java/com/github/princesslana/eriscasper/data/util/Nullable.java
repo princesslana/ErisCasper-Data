@@ -20,7 +20,7 @@ public class Nullable<T> {
   }
 
   public <U> Nullable<U> flatMap(Function<? super T, Nullable<U>> f) {
-    return isNull() ? Nullable.<U>ofNull() : f.apply(value.get());
+    return isNull() ? ofNull() : f.apply(value.get());
   }
 
   public <U> Nullable<U> map(Function<? super T, ? extends U> f) {
