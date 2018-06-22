@@ -89,6 +89,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.immutables</groupId>
+      <artifactId>encode</artifactId>
+      <version>${lib.immutables.version}</version>
+      <scope>provided</scope>
+      <!-- compile only -->
+    </dependency>
+    <dependency>
       <groupId>com.google.errorprone</groupId>
       <artifactId>error_prone_annotations</artifactId>
       <version>${lib.errorprone.version}</version>
@@ -176,6 +183,31 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${plugin.compiler.version}</version>
+        <executions>
+          <execution>
+            <id>default-compile</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>firstPass</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>com/github/princesslana/eriscasper/data/immutable/encoding/*.java</include>
+              </includes>
+            </configuration>
+          </execution>
+          <execution>
+            <id>secondPass</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
