@@ -1,0 +1,3 @@
+$os	string	your operating system
+$browser	string	your library name
+$device	string	your library name
