@@ -34,26 +34,28 @@ class ResourceDef
       f.puts "@Value.Immutable"
       f.puts "@JsonDeserialize(as=Immutable#{name}.class)"
       f.puts "public interface #{name} {"
-      
-      fields.each { |field| field.write(f) }
 
-      if query_string
-        f.puts "  default String toQueryString() {"
-        f.puts "    return new com.github.princesslana.eriscasper.data.util.QueryStringBuilder()"
+      query_string_method = ''
 
-        fields.each { |field|
-          query_field_addition = '    .add'
+      fields.each { |field|
+        field.write(f)
+        if query_string
+          query_string_method += "\n"
+          query_field_addition = '      .add'
           query_field_addition += field.raw_java_type
           query_field_addition += '("'
           query_field_addition += field.property_name
           query_field_addition += '",'
           query_field_addition += field.java_name
           query_field_addition += '())'
-          f.puts query_field_addition
-        }
+        end
+      }
 
-        f.puts "    .build();"
-        f.puts "  }"
+      if query_string
+        f.puts '  default String toQueryString() {'
+        f.puts '    return new com.github.princesslana.eriscasper.data.util.QueryStringBuilder()' + query_string_method
+        f.puts '      .build();'
+        f.puts '  }'
       end
 
       f.puts "}"
