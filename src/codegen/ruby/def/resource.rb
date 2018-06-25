@@ -41,7 +41,16 @@ class ResourceDef
         f.puts "  default String toQueryString() {"
         f.puts "    return new com.github.princesslana.eriscasper.data.util.QueryStringBuilder()"
 
-        fields.each { |field| f.puts '    .add' + field.raw_java_type + '("' + field.property_name + '",' + field.java_name + '())' }
+        fields.each { |field|
+          query_field_addition = '    .add'
+          query_field_addition += field.raw_java_type
+          query_field_addition += '("'
+          query_field_addition += field.property_name
+          query_field_addition += '",'
+          query_field_addition += field.java_name
+          query_field_addition += '())'
+          f.puts query_field_addition
+        }
 
         f.puts "    .build();"
         f.puts "  }"
