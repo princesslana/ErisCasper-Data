@@ -41,13 +41,13 @@ class ResourceDef
         field.write(f)
         if query_string
           query_string_method += "\n"
-          query_field_addition = '      .add'
-          query_field_addition += field.raw_java_type
-          query_field_addition += '("'
-          query_field_addition += field.property_name
-          query_field_addition += '",'
-          query_field_addition += field.java_name
-          query_field_addition += '())'
+          query_string_method += '      .add'
+          query_string_method += field.raw_java_type
+          query_string_method += '("'
+          query_string_method += field.property_name
+          query_string_method += '",'
+          query_string_method += field.java_name
+          query_string_method += '())'
         end
       }
 
