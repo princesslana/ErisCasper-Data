@@ -2,12 +2,13 @@
 require_relative 'field'
 
 class ResourceDef
-  attr_reader :name, :fields, :imports
+  attr_reader :name, :fields, :imports, :query_string
   
-  def initialize(name, fields, opts={})
+  def initialize(name, fields, query_string, opts={})
     @name = name + (opts[:suffix] || "")
     @fields = fields
     @imports = opts[:imports] || []
+    @query_string = query_string
   end
   
   def write(package)
@@ -16,6 +17,7 @@ class ResourceDef
     FileUtils.mkdir_p dir
     
     File.open(File.join(dir, "#{name}.java"), "w") do |f|
+      package = package.gsub("/", ".")
       f.puts "package #{package};"
       f.puts
       
@@ -28,25 +30,39 @@ class ResourceDef
       ) + imports).each do |import|
         f.puts "import #{import};"
       end
-      
-      f.puts
+
       f.puts "@Value.Immutable"
       f.puts "@JsonDeserialize(as=Immutable#{name}.class)"
       f.puts "public interface #{name} {"
       
       fields.each { |field| field.write(f) }
-      
+
+      if query_string
+        f.puts "  default String toQueryString() {"
+        f.puts "    return new com.github.princesslana.eriscasper.data.util.QueryStringBuilder()"
+
+        fields.each { |field| f.puts '    .add' + field.raw_java_type + '("' + field.property_name + '",' + field.java_name + '())' }
+
+        f.puts "    .build();"
+        f.puts "  }"
+      end
+
       f.puts "}"
     end
   end
 
   def self.from_file(filename, opts={})
     fields = []
+    query_string = false
 
     File.open(filename).each do |line|
-      fields.push FieldDef.from_line(line)
+      if line.start_with?('qs ')
+        query_string = true
+      else
+        fields.push FieldDef.from_line(line)
+      end
     end
   
-    ResourceDef.new File.basename(filename).split('_').collect(&:capitalize).join, fields, opts
+    ResourceDef.new File.basename(filename).split('_').collect(&:capitalize).join, fields, query_string, opts
   end
 end
