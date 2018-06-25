@@ -2,7 +2,6 @@ package com.github.princesslana.eriscasper.data.util;
 
 import com.github.princesslana.eriscasper.data.Snowflake;
 import com.google.common.collect.ImmutableMap;
-
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -24,11 +23,11 @@ public class QueryStringBuilder {
   }
 
   public QueryStringBuilder addSnowflake(String name, Optional<Snowflake> snowflake) {
-    return snowflake.map(s -> add(name, s.unwrap())).orElse(this);
+    return snowflake.map(s -> addSnowflake(name, s)).orElse(this);
   }
 
   public QueryStringBuilder addBoolean(String name, Optional<Boolean> value) {
-    return value.map(v -> add(name, v.toString())).orElse(this);
+    return value.map(v -> addBoolean(name, v)).orElse(this);
   }
 
   public QueryStringBuilder addLong(String name, Optional<Long> value) {
@@ -36,11 +35,11 @@ public class QueryStringBuilder {
   }
 
   public QueryStringBuilder addSnowflake(String name, Nullable<Snowflake> snowflake) {
-    return snowflake.map(s -> add(name, s.unwrap())).orElse(this);
+    return snowflake.map(s -> addSnowflake(name, s)).orElse(this);
   }
 
   public QueryStringBuilder addBoolean(String name, Nullable<Boolean> value) {
-    return value.map(v -> add(name, v.toString())).orElse(this);
+    return value.map(v -> addBoolean(name, v)).orElse(this);
   }
 
   public QueryStringBuilder addLong(String name, Nullable<Long> value) {
