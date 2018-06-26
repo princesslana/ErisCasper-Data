@@ -35,7 +35,7 @@ class ResourceDef
       f.puts "@JsonDeserialize(as=Immutable#{name}.class)"
       f.puts "public interface #{name} {"
 
-      query_string_method = ''
+      query_string_method = '    return new com.github.princesslana.eriscasper.data.util.QueryStringBuilder()'
 
       fields.each { |field|
         field.write(f)
@@ -46,7 +46,7 @@ class ResourceDef
 
       if query_string
         f.puts '  default String toQueryString() {'
-        f.puts '    return new com.github.princesslana.eriscasper.data.util.QueryStringBuilder()' + query_string_method
+        f.puts query_string_method
         f.puts '      .build();'
         f.puts '  }'
       end
