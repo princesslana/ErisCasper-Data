@@ -16,7 +16,7 @@ class ResourceDef
     FileUtils.mkdir_p dir
 
     File.open(File.join(dir, "#{name}.java"), "w") do |f|
-      package = package.gsub("/", ".")
+      package = package.gsub "/", "."
       f.puts "package #{package};"
       f.puts
 
