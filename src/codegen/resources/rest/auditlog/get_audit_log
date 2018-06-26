@@ -1,4 +1,3 @@
-qs https://discordapp.com/developers/docs/resources/audit-log#get-guild-audit-log-query-string-parameters
 user_id?	snowflake	The id of the queried user.
 action_type?	integer	The type of the queried action.
 before?	snowflake	The snowflake of which to query before.

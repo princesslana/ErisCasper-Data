@@ -5,6 +5,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.princesslana.eriscasper.data.util.Jackson;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Data {
 
@@ -34,5 +37,17 @@ public class Data {
     } catch (JsonProcessingException e) {
       throw new DataException(e);
     }
+  }
+
+  public static String toQueryString(Object obj) {
+    JsonNode node = jackson.valueToTree(obj);
+    Map<String, String> queryMapper = new HashMap<>();
+    node.fields()
+        .forEachRemaining(entry -> queryMapper.put(entry.getKey(), entry.getValue().asText()));
+    return queryMapper
+        .entrySet()
+        .stream()
+        .map(e -> e.getKey() + "=" + e.getValue())
+        .collect(Collectors.joining("&"));
   }
 }

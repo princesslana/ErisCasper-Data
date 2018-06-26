@@ -24,24 +24,18 @@ class FieldDef
     prefix + name.tr('?$', '').split('_').collect(&:capitalize).join
   end
 
-  def raw_java_type
-    get_java_type type.tr('?', '')
-  end
-
   def java_type
-    jt = raw_java_type
-    
+    jt = get_java_type type.tr('?', '')
+
     jt = "com.github.princesslana.eriscasper.data.util.Nullable<#{jt}>" if nullable?
     jt = "java.util.Optional<#{jt}>" if optional?
-    
+
     jt
   end
 
-  def property_name
-    name.tr '?', ''
-  end
-
   def json_property_annotation
+    property_name = name.tr '?', ''
+
     "@JsonProperty(\"#{property_name}\")"
   end
   
