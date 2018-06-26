@@ -40,14 +40,7 @@ class ResourceDef
       fields.each { |field|
         field.write(f)
         if query_string
-          query_string_method += "\n"
-          query_string_method += '      .add'
-          query_string_method += field.raw_java_type
-          query_string_method += '("'
-          query_string_method += field.property_name
-          query_string_method += '",'
-          query_string_method += field.java_name
-          query_string_method += '())'
+          query_string_method += "\n      .add#{field.raw_java_type}(\"#{field.property_name}\", #{field.java_name}())"
         end
       }
 
