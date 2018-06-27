@@ -40,10 +40,8 @@ public class Data {
   }
 
   public static String toQueryString(Object obj) {
-    return StreamSupport.stream(
-            ((Iterable<Map.Entry<String, JsonNode>>) () -> jackson.valueToTree(obj).fields())
-                .spliterator(),
-            false)
+    Iterable<Map.Entry<String, JsonNode>> iterableFields = () -> jackson.valueToTree(obj).fields();
+    return StreamSupport.stream(iterableFields.spliterator(), false)
         .map(e -> e.getKey() + "=" + e.getValue())
         .collect(Collectors.joining("&"));
   }
