@@ -69,6 +69,11 @@ public class TestData {
   }
 
   @Test
+  public void toQueryString_whenEmpty_shouldProduceNothing() {
+    Assertions.assertThat(Data.toQueryString(Optional.empty())).isEqualTo("");
+  }
+
+  @Test
   public void toQueryString_whenPopulated_shouldFormat() {
     Assertions.assertThat(Data.toQueryString(Obj.of(Optional.of("test")))).isEqualTo("field=test");
   }

@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.princesslana.eriscasper.data.util.Jackson;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class Data {
 
@@ -40,13 +40,10 @@ public class Data {
   }
 
   public static String toQueryString(Object obj) {
-    JsonNode node = jackson.valueToTree(obj);
-    Map<String, String> queryMapper = new HashMap<>();
-    node.fields()
-        .forEachRemaining(entry -> queryMapper.put(entry.getKey(), entry.getValue().asText()));
-    return queryMapper
-        .entrySet()
-        .stream()
+    return StreamSupport.stream(
+            ((Iterable<Map.Entry<String, JsonNode>>) () -> jackson.valueToTree(obj).fields())
+                .spliterator(),
+            false)
         .map(e -> e.getKey() + "=" + e.getValue())
         .collect(Collectors.joining("&"));
   }
