@@ -75,7 +75,8 @@ public class TestData {
 
   @Test
   public void toQueryString_whenPopulated_shouldFormat() {
-    Assertions.assertThat(Data.toQueryString(Obj.of(Optional.of("test")))).isEqualTo("field=\"test\"");
+    Assertions.assertThat(Data.toQueryString(Obj.of(Optional.of("test"))))
+        .isEqualTo("field=\"test\"");
   }
 
   @Test
