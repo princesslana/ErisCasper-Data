@@ -1,0 +1,4 @@
+user_id?	snowflake	The id of the queried user.
+action_type?	integer	The type of the queried action.
+before?	snowflake	The snowflake of which to query before.
+limit?	integer	The limit of the audit logs received.

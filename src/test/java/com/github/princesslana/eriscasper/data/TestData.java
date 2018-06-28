@@ -2,9 +2,11 @@ package com.github.princesslana.eriscasper.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.princesslana.eriscasper.data.util.Nullable;
+import com.google.common.collect.ImmutableMap;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
+import java.util.regex.Pattern;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
@@ -64,6 +66,27 @@ public class TestData {
   public void toJsonString_whenEmptyListInMap_shouldInclude() throws DataException {
     Assertions.assertThat(Data.toJsonString(mapOf("key", Optional.of(Collections.emptyList()))))
         .isEqualTo("{\"key\":[]}");
+  }
+
+  @Test
+  public void toQueryString_whenEmpty_shouldProduceNothing() {
+    Assertions.assertThat(Data.toQueryString(Optional.empty())).isEqualTo("");
+  }
+
+  @Test
+  public void toQueryString_whenPopulated_shouldFormat() {
+    Assertions.assertThat(Data.toQueryString(Obj.of(Optional.of("test"))))
+        .isEqualTo("field=\"test\"");
+  }
+
+  @Test
+  public void toQueryString_whenPopulatedWithMultipleItems_shouldFormat() {
+    Assertions.assertThat(
+            Data.toQueryString(
+                ImmutableMap.builder().put("test1", "item1").put("test2", "item2").build()))
+        .contains("test1=\"item1\"")
+        .contains("test2=\"item2\"")
+        .matches(Pattern.compile(".+?(?=&).*"));
   }
 
   private static class Obj<T> {

@@ -27,6 +27,10 @@ public class Nullable<T> {
     return of(value.map(f));
   }
 
+  public T orElse(T other) {
+    return value.orElse(other);
+  }
+
   public boolean isNull() {
     return !value.isPresent();
   }
