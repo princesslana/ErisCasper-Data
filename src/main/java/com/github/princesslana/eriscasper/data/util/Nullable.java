@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Nullable<T> {
 
@@ -27,10 +28,6 @@ public class Nullable<T> {
     return of(value.map(f));
   }
 
-  public T orElse(T other) {
-    return value.orElse(other);
-  }
-
   public boolean isNull() {
     return !value.isPresent();
   }
@@ -45,13 +42,25 @@ public class Nullable<T> {
 
   @JsonValue
   @javax.annotation.Nullable
-  public T get() {
+  public T orNull() {
     return value.orElse(null);
+  }
+
+  public T orElse(T other) {
+    return value.orElse(other);
+  }
+
+  public T orElseGet(Supplier<? extends T> other) {
+    return value.orElseGet(other);
+  }
+
+  public <X extends Throwable> T orElseThrow(Supplier<? extends X> exceptionSupplier) throws X {
+    return value.orElseThrow(exceptionSupplier);
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("value", get()).toString();
+    return MoreObjects.toStringHelper(this).add("value", orNull()).toString();
   }
 
   @Override
