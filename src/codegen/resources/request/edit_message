@@ -1,0 +1,2 @@
+content?	string	the new message contents (up to 2000 characters)
+embed?	embed object	embedded rich content

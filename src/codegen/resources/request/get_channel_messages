@@ -1,0 +1,4 @@
+around?	snowflake	get messages around this message ID	false	absent
+before?	snowflake	get messages before this message ID	false	absent
+after?	snowflake	get messages after this message ID	false	absent
+limit?	integer	max number of messages to return (1-100)	false	50

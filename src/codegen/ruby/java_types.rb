@@ -37,9 +37,12 @@ TYPES = {
   'embed author object' => 'EmbedAuthor',
   'embed footer object' => 'EmbedFooter',
   'embed image object' => 'EmbedImage',
+  'embed object' => 'Embed',
   'embed provider object' => 'EmbedProvider',
   'embed thumbnail object' => 'EmbedThumbnail',
   'embed video object' => 'EmbedVideo',
+  # TODO: Determine the appropriate type
+  'file contents' => 'Object',
   'int' => 'Long',
   'integer' => 'Long',
   'ISO8601 timestamp' => 'java.time.OffsetDateTime',
