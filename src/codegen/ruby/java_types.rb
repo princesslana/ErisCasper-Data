@@ -32,6 +32,7 @@ TYPES = {
   'array of webhook objects' => 'ImmutableList<Webhook>',
   'assets object' => 'ActivityAssets',
   'audit log event' => 'Long',
+  'base64 image data' => 'String',
   'bool' => 'Boolean',
   'connection properties' => 'ConnectionPropertiesPayload',
   'embed author object' => 'EmbedAuthor',

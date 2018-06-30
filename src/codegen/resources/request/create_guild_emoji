@@ -1,0 +1,3 @@
+name	string	name of the emoji
+image	base64 image data	the 128x128 emoji image
+roles	array of snowflakes	roles for which this emoji will be whitelisted

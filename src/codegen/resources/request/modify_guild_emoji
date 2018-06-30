@@ -1,0 +1,2 @@
+name	string	name of the emoji
+roles	array of snowflakes	roles to which this emoji will be whitelisted
