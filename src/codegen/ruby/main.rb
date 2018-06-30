@@ -18,8 +18,6 @@ resource_files = Dir["#{RESOURCES_DIR}/resource/*"]
 gateway_files = Dir["#{RESOURCES_DIR}/gateway/*"]
 request_files = Dir["#{RESOURCES_DIR}/request/*"]
 
-auditlog_files = Dir["#{RESOURCES_DIR}/rest/auditlog/*"]
-
 def generate(files, x_def, package, opts={})
   classes = files.map { |f| x_def.from_file f, opts }
   
