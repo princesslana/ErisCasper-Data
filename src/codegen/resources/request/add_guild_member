@@ -1,0 +1,5 @@
+access_token	string	an oauth2 access token granted with the guilds.join to the bot's application for the user you want to add to the guild	
+nick?	string	value to set users nickname to	MANAGE_NICKNAMES
+roles?	array of snowflakes	array of role ids the member is assigned	MANAGE_ROLES
+mute?	bool	if the user is muted	MUTE_MEMBERS
+deaf?	bool	if the user is deafened	DEAFEN_MEMBERS

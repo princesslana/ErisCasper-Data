@@ -1,0 +1,7 @@
+name	string	channel name (2-100 characters)
+type?	integer	the type of channel
+bitrate?	integer	the bitrate (in bits) of the voice channel (voice only)
+user_limit?	integer	the user limit of the voice channel (voice only)
+permission_overwrites?	an array of overwrite objects	the channel's permission overwrites
+parent_id?	snowflake	id of the parent category for a channel
+nsfw?	bool	if the channel is nsfw

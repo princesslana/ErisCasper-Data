@@ -1,0 +1,5 @@
+name	string	name of the role
+permissions	integer	bitwise of the enabled/disabled permissions
+color	integer	RGB color value
+hoist	bool	whether the role should be displayed separately in the sidebar
+mentionable	bool	whether the role should be mentionable
