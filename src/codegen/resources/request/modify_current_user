@@ -1,0 +1,2 @@
+username	string	users username, if changed may cause the users discriminator to be randomized.
+avatar?	avatar data	if passed, modifies the user's avatar

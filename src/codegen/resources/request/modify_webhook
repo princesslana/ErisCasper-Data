@@ -1,0 +1,3 @@
+name?	string	the default name of the webhook
+avatar?	avatar data string	image for the default webhook avatar
+channel_id?	snowflake	the new channel id this webhook should be moved to

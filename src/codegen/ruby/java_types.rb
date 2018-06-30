@@ -34,9 +34,13 @@ TYPES = {
   'array of webhook objects' => 'ImmutableList<Webhook>',
   'assets object' => 'ActivityAssets',
   'audit log event' => 'Long',
+  'avatar data' => 'String',
+  'avatar data string' => 'String',
   'base64 image data' => 'String',
   'bool' => 'Boolean',
   'connection properties' => 'ConnectionPropertiesPayload',
+  # dict is only used in create_dm. If used elsewhere the type may not be appropriate
+  'dict' => 'ImmutableMap<Snowflake, String>',
   'embed author object' => 'EmbedAuthor',
   'embed footer object' => 'EmbedFooter',
   'embed image object' => 'EmbedImage',
