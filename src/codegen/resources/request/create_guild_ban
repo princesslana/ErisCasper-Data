@@ -1,0 +1,2 @@
+delete-message-days	integer	number of days to delete messages for (0-7)
+reason	string	reason for the ban

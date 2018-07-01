@@ -25,6 +25,7 @@ class ResourceDef
         com.fasterxml.jackson.databind.annotation.JsonDeserialize
         com.github.princesslana.eriscasper.data.Snowflake
         com.google.common.collect.ImmutableList
+        com.google.common.collect.ImmutableMap
         org.immutables.value.Value
       ) + imports).each do |import|
         f.puts "import #{import};"

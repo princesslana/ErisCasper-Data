@@ -1,0 +1,8 @@
+name	string	name of the guild (2-100 characters)
+region	string	voice region id
+icon	string	base64 128x128 jpeg image for the guild icon
+verification_level	integer	verification level
+default_message_notifications	integer	default message notification level
+explicit_content_filter	integer	explicit content filter level
+roles	array of role objects	new guild roles
+channels	array of partial channel objects	new guild's channels

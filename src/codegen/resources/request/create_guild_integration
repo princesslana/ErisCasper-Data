@@ -1,0 +1,2 @@
+type	string	the integration type
+id	snowflake	the integration id
