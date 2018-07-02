@@ -32,10 +32,12 @@ jobs:
       jdk: openjdk8
       env:
         - EC_DATA_VERSION=$(git describe --dirty --tags)
+        - MAVEN_OPTS="-Drevision=$EC_DATA_VERSION -Dproperty=revision -DnewVersion=$EC_DATA_VERSION -DgenerateBackupPoms=false"
       script: mvn -s etc/settings.xml -B versions:set-property deploy -P release
     - jdk: openjdk8
       env:
         - EC_DATA_VERSION=$(git describe --dirty --tags)
+        - MAVEN_OPTS="-Drevision=$EC_DATA_VERSION -Dproperty=revision -DnewVersion=$EC_DATA_VERSION -DgenerateBackupPoms=false"
       script: mvn -B site
       deploy:
         edge:
