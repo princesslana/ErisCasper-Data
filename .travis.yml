@@ -27,12 +27,12 @@ jobs:
       script: mvn -B verify
     - stage: snapshot
       jdk: openjdk8
-      script: mvn -s etc/settings.xml -B deploy -P release
+      script: mvn -s etc/settings.xml -B versions:set-property deploy -P release
     - stage: release
       jdk: openjdk8
       env:
         - EC_DATA_VERSION=$(git describe --dirty --tags)
-      script: mvn -s etc/settings.xml -B deploy -P versions:set-property release
+      script: mvn -s etc/settings.xml -B versions:set-property deploy -P release
     - jdk: openjdk8
       env:
         - EC_DATA_VERSION=$(git describe --dirty --tags)
