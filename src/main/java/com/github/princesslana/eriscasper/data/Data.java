@@ -42,7 +42,7 @@ public class Data {
   public static String toQueryString(Object obj) {
     Iterable<Map.Entry<String, JsonNode>> iterableFields = () -> jackson.valueToTree(obj).fields();
     return StreamSupport.stream(iterableFields.spliterator(), false)
-        .map(e -> e.getKey() + "=" + e.getValue())
+        .map(e -> e.getKey() + "=" + e.getValue().asText())
         .collect(Collectors.joining("&"));
   }
 }

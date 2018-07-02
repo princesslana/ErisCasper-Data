@@ -76,7 +76,7 @@ public class TestData {
   @Test
   public void toQueryString_whenPopulated_shouldFormat() {
     Assertions.assertThat(Data.toQueryString(Obj.of(Optional.of("test"))))
-        .isEqualTo("field=\"test\"");
+        .isEqualTo("field=test");
   }
 
   @Test
@@ -84,8 +84,8 @@ public class TestData {
     Assertions.assertThat(
             Data.toQueryString(
                 ImmutableMap.builder().put("test1", "item1").put("test2", "item2").build()))
-        .contains("test1=\"item1\"")
-        .contains("test2=\"item2\"")
+        .contains("test1=item1")
+        .contains("test2=item2")
         .matches(Pattern.compile(".+?(?=&).*"));
   }
 
