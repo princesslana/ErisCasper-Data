@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Nullable.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ErisCasper-Data</a> &gt; <a href="index.source.html" class="el_package">com.github.princesslana.eriscasper.data.util</a> &gt; <span class="el_source">Nullable.java</span></div><h1>Nullable.java</h1><pre class="source lang-java linenums">package com.github.princesslana.eriscasper.data.util;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+public class Nullable&lt;T&gt; {
+
+<span class="fc" id="L15">  private static final Nullable&lt;?&gt; NULL = new Nullable&lt;&gt;(Optional.empty());</span>
+
+  private final Optional&lt;T&gt; value;
+
+<span class="fc" id="L19">  private Nullable(Optional&lt;T&gt; value) {</span>
+<span class="fc" id="L20">    this.value = value;</span>
+<span class="fc" id="L21">  }</span>
+
+  public &lt;U&gt; Nullable&lt;U&gt; flatMap(Function&lt;? super T, Nullable&lt;U&gt;&gt; f) {
+<span class="nc bnc" id="L24" title="All 2 branches missed.">    return isNull() ? ofNull() : f.apply(value.get());</span>
+  }
+
+  public &lt;U&gt; Nullable&lt;U&gt; map(Function&lt;? super T, ? extends U&gt; f) {
+<span class="nc" id="L28">    return of(value.map(f));</span>
+  }
+
+  public boolean isNull() {
+<span class="nc bnc" id="L32" title="All 2 branches missed.">    return !value.isPresent();</span>
+  }
+
+  public boolean isPresent() {
+<span class="nc" id="L36">    return value.isPresent();</span>
+  }
+
+  public void ifPresent(Consumer&lt;? super T&gt; c) {
+<span class="nc" id="L40">    value.ifPresent(c);</span>
+<span class="nc" id="L41">  }</span>
+
+  @JsonValue
+  @javax.annotation.Nullable
+  public T orNull() {
+<span class="fc" id="L46">    return value.orElse(null);</span>
+  }
+
+  public T orElse(T other) {
+<span class="nc" id="L50">    return value.orElse(other);</span>
+  }
+
+  public T orElseGet(Supplier&lt;? extends T&gt; other) {
+<span class="nc" id="L54">    return value.orElseGet(other);</span>
+  }
+
+  public &lt;X extends Throwable&gt; T orElseThrow(Supplier&lt;? extends X&gt; exceptionSupplier) throws X {
+<span class="nc" id="L58">    return value.orElseThrow(exceptionSupplier);</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="nc" id="L63">    return MoreObjects.toStringHelper(this).add(&quot;value&quot;, orNull()).toString();</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="nc" id="L68">    return Objects.hash(value);</span>
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">    if (obj == null) {</span>
+<span class="nc" id="L74">      return false;</span>
+    }
+<span class="fc bfc" id="L76" title="All 2 branches covered.">    if (obj == this) {</span>
+<span class="fc" id="L77">      return true;</span>
+    }
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">    if (!(obj instanceof Nullable)) {</span>
+<span class="nc" id="L80">      return false;</span>
+    }
+<span class="fc" id="L82">    Nullable&lt;?&gt; rhs = (Nullable&lt;?&gt;) obj;</span>
+
+<span class="fc" id="L84">    return Objects.equals(value, rhs.value);</span>
+  }
+
+  private static &lt;T&gt; Nullable&lt;T&gt; of(Optional&lt;T&gt; value) {
+<span class="fc" id="L88">    return new Nullable&lt;&gt;(value);</span>
+  }
+
+  @SuppressWarnings(&quot;unchecked&quot;)
+  public static &lt;T&gt; Nullable&lt;T&gt; ofNull() {
+<span class="fc" id="L93">    return (Nullable&lt;T&gt;) NULL;</span>
+  }
+
+  public static &lt;T&gt; Nullable&lt;T&gt; of(T value) {
+<span class="fc" id="L97">    Preconditions.checkNotNull(value);</span>
+<span class="fc" id="L98">    return of(Optional.of(value));</span>
+  }
+
+  @JsonCreator
+  public static &lt;T&gt; Nullable&lt;T&gt; ofNullable(@javax.annotation.Nullable T value) {
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">    return value == null ? ofNull() : of(value);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

@@ -109,7 +109,7 @@
 <a class="jxr_linenumber" name="L101" href="#L101">101</a>   @Deprecated
 <a class="jxr_linenumber" name="L102" href="#L102">102</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L103" href="#L103">103</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L104" href="#L104">104</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableMessageActivity.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/UserId.html">UserId</a> {
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableInviteWithMetadata.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/UserId.html">UserId</a> {
 <a class="jxr_linenumber" name="L105" href="#L105">105</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id;
 <a class="jxr_linenumber" name="L106" href="#L106">106</a>     @JsonProperty(<span class="jxr_string">"id"</span>)
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id) {
@@ -126,7 +126,7 @@
 <a class="jxr_linenumber" name="L118" href="#L118">118</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L119" href="#L119">119</a>   @Deprecated
 <a class="jxr_linenumber" name="L120" href="#L120">120</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L121" href="#L121">121</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUserId.html">ImmutableUserId</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableMessageActivity.html">Json</a> json) {
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableUserId.html">ImmutableUserId</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableInviteWithMetadata.html">Json</a> json) {
 <a class="jxr_linenumber" name="L122" href="#L122">122</a>     ImmutableUserId.Builder builder = ImmutableUserId.builder();
 <a class="jxr_linenumber" name="L123" href="#L123">123</a>     <strong class="jxr_keyword">if</strong> (json.id != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L124" href="#L124">124</a>       builder.id(json.id);
@@ -166,13 +166,13 @@
 <a class="jxr_linenumber" name="L158" href="#L158">158</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L159" href="#L159">159</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L160" href="#L160">160</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L161" href="#L161">161</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableMessageActivity.html">Builder</a> {
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableInviteWithMetadata.html">Builder</a> {
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_ID = 0x1L;
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">long</strong> initBits = 0x1L;
 <a class="jxr_linenumber" name="L164" href="#L164">164</a> 
 <a class="jxr_linenumber" name="L165" href="#L165">165</a>     <strong class="jxr_keyword">private</strong> @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id;
 <a class="jxr_linenumber" name="L166" href="#L166">166</a> 
-<a class="jxr_linenumber" name="L167" href="#L167">167</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableMessageActivity.html">Builder</a>() {
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableInviteWithMetadata.html">Builder</a>() {
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>     }
 <a class="jxr_linenumber" name="L169" href="#L169">169</a> 
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>     <em class="jxr_javadoccomment">/**</em>
@@ -183,7 +183,7 @@
 <a class="jxr_linenumber" name="L175" href="#L175">175</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L176" href="#L176">176</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L177" href="#L177">177</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L178" href="#L178">178</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableMessageActivity.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/UserId.html">UserId</a> instance) {
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableInviteWithMetadata.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/resource/UserId.html">UserId</a> instance) {
 <a class="jxr_linenumber" name="L179" href="#L179">179</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L180" href="#L180">180</a>       id(instance.getId());
 <a class="jxr_linenumber" name="L181" href="#L181">181</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -196,7 +196,7 @@
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L189" href="#L189">189</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>     @JsonProperty(<span class="jxr_string">"id"</span>)
-<a class="jxr_linenumber" name="L191" href="#L191">191</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableMessageActivity.html">Builder</a> id(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id) {
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/ImmutableInviteWithMetadata.html">Builder</a> id(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> id) {
 <a class="jxr_linenumber" name="L192" href="#L192">192</a>       <strong class="jxr_keyword">this</strong>.id = Objects.requireNonNull(id, <span class="jxr_string">"id"</span>);
 <a class="jxr_linenumber" name="L193" href="#L193">193</a>       initBits &amp;= ~INIT_BIT_ID;
 <a class="jxr_linenumber" name="L194" href="#L194">194</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;

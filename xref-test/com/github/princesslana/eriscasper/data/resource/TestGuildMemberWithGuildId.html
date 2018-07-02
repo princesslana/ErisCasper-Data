@@ -10,42 +10,43 @@
 <a class="jxr_linenumber" name="L2" href="#L2">2</a>   
 <a class="jxr_linenumber" name="L3" href="#L3">3</a>   <strong class="jxr_keyword">import</strong> com.github.princesslana.eriscasper.data.DataAssert;
 <a class="jxr_linenumber" name="L4" href="#L4">4</a>   <strong class="jxr_keyword">import</strong> com.github.princesslana.eriscasper.data.Snowflake;
-<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> java.util.Optional;
-<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> org.testng.annotations.Test;
-<a class="jxr_linenumber" name="L7" href="#L7">7</a>   
-<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/TestGuildMemberWithGuildId.html">TestGuildMemberWithGuildId</a> {
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>     @Test
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fromJson_whenValidPayload_shouldDeserialize() {
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>      String payload =
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>          <span class="jxr_string">"{"</span>
-<a class="jxr_linenumber" name="L13" href="#L13">13</a>              + <span class="jxr_string">"\&quot;user\&quot;:"</span>
-<a class="jxr_linenumber" name="L14" href="#L14">14</a>              + <span class="jxr_string">"{"</span>
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>              + <span class="jxr_string">"   \&quot;username\&quot;     :\&quot;LaBotuel\&quot;,"</span>
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>              + <span class="jxr_string">"   \&quot;id\&quot;           :\&quot;417388135027048495\&quot;,"</span>
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>              + <span class="jxr_string">"   \&quot;discriminator\&quot;:\&quot;7013\&quot;,"</span>
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>              + <span class="jxr_string">"   \&quot;bot\&quot;          :true,"</span>
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>              + <span class="jxr_string">"   \&quot;avatar\&quot;       :null"</span>
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>              + <span class="jxr_string">"},"</span>
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>              + <span class="jxr_string">"\&quot;joined_at\&quot;:\&quot;2018-06-03T10:59:19.884195-04:00\&quot;,"</span>
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>              + <span class="jxr_string">"\&quot;deaf\&quot;:false,"</span>
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>              + <span class="jxr_string">"\&quot;mute\&quot;:false,"</span>
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>              + <span class="jxr_string">"\&quot;guild_id\&quot;     :\&quot;123456789123456789\&quot;"</span>
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>              + <span class="jxr_string">"}"</span>;
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>  
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>      DataAssert.thatFromJson(payload, GuildMemberWithGuildId.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"guildId"</span>, Snowflake.of(<span class="jxr_string">"123456789123456789"</span>))
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.id"</span>, Snowflake.of(<span class="jxr_string">"417388135027048495"</span>))
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.deaf"</span>, false)
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.mute"</span>, false)
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.username"</span>, <span class="jxr_string">"LaBotuel"</span>)
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.discriminator"</span>, <span class="jxr_string">"7013"</span>)
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.avatar"</span>, Optional.empty())
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.bot"</span>, Optional.of(<strong class="jxr_keyword">true</strong>))
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.mfaEnabled"</span>, Optional.empty())
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.verified"</span>, Optional.empty())
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.email"</span>, Optional.empty());
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>    }
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>  }
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> com.github.princesslana.eriscasper.data.util.Nullable;
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> java.util.Optional;
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.testng.annotations.Test;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/resource/TestGuildMemberWithGuildId.html">TestGuildMemberWithGuildId</a> {
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>    @Test
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>    <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> fromJson_whenValidPayload_shouldDeserialize() {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      String payload =
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>          <span class="jxr_string">"{"</span>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>              + <span class="jxr_string">"\&quot;user\&quot;:"</span>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>              + <span class="jxr_string">"{"</span>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>              + <span class="jxr_string">"   \&quot;username\&quot;     :\&quot;LaBotuel\&quot;,"</span>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>              + <span class="jxr_string">"   \&quot;id\&quot;           :\&quot;417388135027048495\&quot;,"</span>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>              + <span class="jxr_string">"   \&quot;discriminator\&quot;:\&quot;7013\&quot;,"</span>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>              + <span class="jxr_string">"   \&quot;bot\&quot;          :true,"</span>
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>              + <span class="jxr_string">"   \&quot;avatar\&quot;       :null"</span>
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>              + <span class="jxr_string">"},"</span>
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>              + <span class="jxr_string">"\&quot;joined_at\&quot;:\&quot;2018-06-03T10:59:19.884195-04:00\&quot;,"</span>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>              + <span class="jxr_string">"\&quot;deaf\&quot;:false,"</span>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>              + <span class="jxr_string">"\&quot;mute\&quot;:false,"</span>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>              + <span class="jxr_string">"\&quot;guild_id\&quot;     :\&quot;123456789123456789\&quot;"</span>
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>              + <span class="jxr_string">"}"</span>;
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>  
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>      DataAssert.thatFromJson(payload, GuildMemberWithGuildId.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"guildId"</span>, Snowflake.of(<span class="jxr_string">"123456789123456789"</span>))
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.id"</span>, Snowflake.of(<span class="jxr_string">"417388135027048495"</span>))
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.deaf"</span>, false)
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.mute"</span>, false)
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.username"</span>, <span class="jxr_string">"LaBotuel"</span>)
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.discriminator"</span>, <span class="jxr_string">"7013"</span>)
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.avatar"</span>, Nullable.ofNull())
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.bot"</span>, Optional.of(<strong class="jxr_keyword">true</strong>))
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.mfaEnabled"</span>, Optional.empty())
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.verified"</span>, Optional.empty())
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>          .hasFieldOrPropertyWithValue(<span class="jxr_string">"member.user.email"</span>, Optional.empty());
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>    }
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2018. All rights reserved.</div>

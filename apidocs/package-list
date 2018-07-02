@@ -1,5 +1,8 @@
 com.github.princesslana.eriscasper.data
 com.github.princesslana.eriscasper.data.event
+com.github.princesslana.eriscasper.data.gateway
 com.github.princesslana.eriscasper.data.immutable
+com.github.princesslana.eriscasper.data.immutable.encoding
+com.github.princesslana.eriscasper.data.request
 com.github.princesslana.eriscasper.data.resource
 com.github.princesslana.eriscasper.data.util

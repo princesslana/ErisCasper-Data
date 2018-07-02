@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OptionalImmutableListEncoding.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ErisCasper-Data</a> &gt; <a href="index.source.html" class="el_package">com.github.princesslana.eriscasper.data.immutable.encoding</a> &gt; <span class="el_source">OptionalImmutableListEncoding.java</span></div><h1>OptionalImmutableListEncoding.java</h1><pre class="source lang-java linenums">package com.github.princesslana.eriscasper.data.immutable.encoding;
+
+import com.google.common.collect.ImmutableList;
+import java.util.Arrays;
+import java.util.Optional;
+import org.immutables.encode.Encoding;
+import org.immutables.encode.Encoding.StandardNaming;
+
+@Encoding
+<span class="nc" id="L10">public class OptionalImmutableListEncoding&lt;T&gt; {</span>
+<span class="nc" id="L11">  @Encoding.Impl private Optional&lt;ImmutableList&lt;T&gt;&gt; value = Optional.empty();</span>
+
+  @Encoding.Builder
+<span class="nc" id="L14">  static class Builder&lt;T&gt; {</span>
+<span class="nc" id="L15">    private Optional&lt;ImmutableList.Builder&lt;T&gt;&gt; value = Optional.empty();</span>
+
+    @Encoding.Init
+    @Encoding.Copy
+    public void set(Optional&lt;ImmutableList&lt;T&gt;&gt; value) {
+<span class="nc" id="L20">      this.value = value.map(vs -&gt; ImmutableList.&lt;T&gt;builder().addAll(vs));</span>
+<span class="nc" id="L21">    }</span>
+
+    @Encoding.Init
+    @Encoding.Naming(standard = StandardNaming.INIT)
+    public void ofIterable(Iterable&lt;? extends T&gt; vs) {
+<span class="nc" id="L26">      this.value = Optional.of(ImmutableList.&lt;T&gt;builder().addAll(vs));</span>
+<span class="nc" id="L27">    }</span>
+
+    @Encoding.Init
+    @Encoding.Naming(standard = StandardNaming.ADD)
+    public final void add(T v) {
+<span class="nc" id="L32">      ImmutableList.Builder&lt;T&gt; b = value.orElse(ImmutableList.builder());</span>
+<span class="nc" id="L33">      value = Optional.of(b.add(v));</span>
+<span class="nc" id="L34">    }</span>
+
+    @Encoding.Init
+    @Encoding.Naming(standard = StandardNaming.ADD)
+    @SafeVarargs
+    public final void addVarArgs(T... vs) {
+<span class="nc" id="L40">      Arrays.stream(vs).forEach(this::add);</span>
+<span class="nc" id="L41">    }</span>
+
+    @Encoding.Build
+    public Optional&lt;ImmutableList&lt;T&gt;&gt; build() {
+<span class="nc" id="L45">      return value.map(ImmutableList.Builder::build);</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

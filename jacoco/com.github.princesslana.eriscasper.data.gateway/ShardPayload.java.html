@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ShardPayload.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ErisCasper-Data</a> &gt; <a href="index.source.html" class="el_package">com.github.princesslana.eriscasper.data.gateway</a> &gt; <span class="el_source">ShardPayload.java</span></div><h1>ShardPayload.java</h1><pre class="source lang-java linenums">package com.github.princesslana.eriscasper.data.gateway;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import java.util.List;
+import org.immutables.value.Value;
+
+@Value.Immutable
+<span class="fc" id="L11">public abstract class ShardPayload {</span>
+  public abstract Long getShardId();
+
+  public abstract Long getNumShards();
+
+  @JsonValue
+  public ImmutableList&lt;Long&gt; toArray() {
+<span class="fc" id="L18">    return ImmutableList.of(getShardId(), getNumShards());</span>
+  }
+
+  @JsonCreator
+  private static ShardPayload fromIterable(List&lt;Long&gt; list) {
+<span class="pc bpc" id="L23" title="1 of 2 branches missed.">    Preconditions.checkArgument(list.size() == 2, &quot;Shard creation requires two elements&quot;);</span>
+
+<span class="fc" id="L25">    return of(list.get(0), list.get(1));</span>
+  }
+
+  public static ShardPayload of(Integer shardId, Integer numShards) {
+<span class="fc" id="L29">    return of(shardId.longValue(), numShards.longValue());</span>
+  }
+
+  public static ShardPayload of(Long shardId, Long numShards) {
+<span class="fc" id="L33">    return ImmutableShardPayload.builder().shardId(shardId).numShards(numShards).build();</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

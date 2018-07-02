@@ -151,7 +151,7 @@
 <a class="jxr_linenumber" name="L143" href="#L143">143</a>   @Deprecated
 <a class="jxr_linenumber" name="L144" href="#L144">144</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L146" href="#L146">146</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ChannelPinsUpdateEventData.html">ChannelPinsUpdateEventData</a> {
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ResumedEvent.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ChannelPinsUpdateEventData.html">ChannelPinsUpdateEventData</a> {
 <a class="jxr_linenumber" name="L147" href="#L147">147</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId;
 <a class="jxr_linenumber" name="L148" href="#L148">148</a>     Optional&lt;OffsetDateTime&gt; lastPinTimestamp = Optional.empty();
 <a class="jxr_linenumber" name="L149" href="#L149">149</a>     @JsonProperty(<span class="jxr_string">"channel_id"</span>)
@@ -175,7 +175,7 @@
 <a class="jxr_linenumber" name="L167" href="#L167">167</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>   @Deprecated
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L170" href="#L170">170</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableChannelPinsUpdateEventData.html">ImmutableChannelPinsUpdateEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Json</a> json) {
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableChannelPinsUpdateEventData.html">ImmutableChannelPinsUpdateEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ResumedEvent.html">Json</a> json) {
 <a class="jxr_linenumber" name="L171" href="#L171">171</a>     ImmutableChannelPinsUpdateEventData.Builder builder = ImmutableChannelPinsUpdateEventData.builder();
 <a class="jxr_linenumber" name="L172" href="#L172">172</a>     <strong class="jxr_keyword">if</strong> (json.channelId != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L173" href="#L173">173</a>       builder.channelId(json.channelId);
@@ -218,14 +218,14 @@
 <a class="jxr_linenumber" name="L210" href="#L210">210</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L211" href="#L211">211</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L212" href="#L212">212</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L213" href="#L213">213</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Builder</a> {
+<a class="jxr_linenumber" name="L213" href="#L213">213</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> {
 <a class="jxr_linenumber" name="L214" href="#L214">214</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_CHANNEL_ID = 0x1L;
 <a class="jxr_linenumber" name="L215" href="#L215">215</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">long</strong> initBits = 0x1L;
 <a class="jxr_linenumber" name="L216" href="#L216">216</a> 
 <a class="jxr_linenumber" name="L217" href="#L217">217</a>     <strong class="jxr_keyword">private</strong> @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId;
 <a class="jxr_linenumber" name="L218" href="#L218">218</a>     <strong class="jxr_keyword">private</strong> @Nullable OffsetDateTime lastPinTimestamp;
 <a class="jxr_linenumber" name="L219" href="#L219">219</a> 
-<a class="jxr_linenumber" name="L220" href="#L220">220</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Builder</a>() {
+<a class="jxr_linenumber" name="L220" href="#L220">220</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a>() {
 <a class="jxr_linenumber" name="L221" href="#L221">221</a>     }
 <a class="jxr_linenumber" name="L222" href="#L222">222</a> 
 <a class="jxr_linenumber" name="L223" href="#L223">223</a>     <em class="jxr_javadoccomment">/**</em>
@@ -236,7 +236,7 @@
 <a class="jxr_linenumber" name="L228" href="#L228">228</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L229" href="#L229">229</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L230" href="#L230">230</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L231" href="#L231">231</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ChannelPinsUpdateEventData.html">ChannelPinsUpdateEventData</a> instance) {
+<a class="jxr_linenumber" name="L231" href="#L231">231</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ChannelPinsUpdateEventData.html">ChannelPinsUpdateEventData</a> instance) {
 <a class="jxr_linenumber" name="L232" href="#L232">232</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L233" href="#L233">233</a>       channelId(instance.getChannelId());
 <a class="jxr_linenumber" name="L234" href="#L234">234</a>       Optional&lt;OffsetDateTime&gt; lastPinTimestampOptional = instance.getLastPinTimestamp();
@@ -253,7 +253,7 @@
 <a class="jxr_linenumber" name="L245" href="#L245">245</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L246" href="#L246">246</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L247" href="#L247">247</a>     @JsonProperty(<span class="jxr_string">"channel_id"</span>)
-<a class="jxr_linenumber" name="L248" href="#L248">248</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Builder</a> channelId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId) {
+<a class="jxr_linenumber" name="L248" href="#L248">248</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> channelId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId) {
 <a class="jxr_linenumber" name="L249" href="#L249">249</a>       <strong class="jxr_keyword">this</strong>.channelId = Objects.requireNonNull(channelId, <span class="jxr_string">"channelId"</span>);
 <a class="jxr_linenumber" name="L250" href="#L250">250</a>       initBits &amp;= ~INIT_BIT_CHANNEL_ID;
 <a class="jxr_linenumber" name="L251" href="#L251">251</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -265,7 +265,7 @@
 <a class="jxr_linenumber" name="L257" href="#L257">257</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L258" href="#L258">258</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L259" href="#L259">259</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L260" href="#L260">260</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Builder</a> lastPinTimestamp(OffsetDateTime lastPinTimestamp) {
+<a class="jxr_linenumber" name="L260" href="#L260">260</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> lastPinTimestamp(OffsetDateTime lastPinTimestamp) {
 <a class="jxr_linenumber" name="L261" href="#L261">261</a>       <strong class="jxr_keyword">this</strong>.lastPinTimestamp = Objects.requireNonNull(lastPinTimestamp, <span class="jxr_string">"lastPinTimestamp"</span>);
 <a class="jxr_linenumber" name="L262" href="#L262">262</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L263" href="#L263">263</a>     }
@@ -277,7 +277,7 @@
 <a class="jxr_linenumber" name="L269" href="#L269">269</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L270" href="#L270">270</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L271" href="#L271">271</a>     @JsonProperty(<span class="jxr_string">"last_pin_timestamp"</span>)
-<a class="jxr_linenumber" name="L272" href="#L272">272</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildMemberUpdateEventData.html">Builder</a> lastPinTimestamp(Optional&lt;? <strong class="jxr_keyword">extends</strong> OffsetDateTime&gt; lastPinTimestamp) {
+<a class="jxr_linenumber" name="L272" href="#L272">272</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> lastPinTimestamp(Optional&lt;? <strong class="jxr_keyword">extends</strong> OffsetDateTime&gt; lastPinTimestamp) {
 <a class="jxr_linenumber" name="L273" href="#L273">273</a>       <strong class="jxr_keyword">this</strong>.lastPinTimestamp = lastPinTimestamp.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L274" href="#L274">274</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L275" href="#L275">275</a>     }

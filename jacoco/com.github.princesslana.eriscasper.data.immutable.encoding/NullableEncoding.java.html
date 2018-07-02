@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NullableEncoding.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ErisCasper-Data</a> &gt; <a href="index.source.html" class="el_package">com.github.princesslana.eriscasper.data.immutable.encoding</a> &gt; <span class="el_source">NullableEncoding.java</span></div><h1>NullableEncoding.java</h1><pre class="source lang-java linenums">package com.github.princesslana.eriscasper.data.immutable.encoding;
+
+import com.github.princesslana.eriscasper.data.util.Nullable;
+import org.immutables.encode.Encoding;
+import org.immutables.encode.Encoding.StandardNaming;
+
+@Encoding
+<span class="nc" id="L8">public class NullableEncoding&lt;T&gt; {</span>
+<span class="nc" id="L9">  @Encoding.Impl private Nullable&lt;T&gt; value = Nullable.ofNull();</span>
+
+  @Encoding.Builder
+<span class="nc" id="L12">  static class Builder&lt;T&gt; {</span>
+<span class="nc" id="L13">    private Nullable&lt;T&gt; value = Nullable.ofNull();</span>
+
+    @Encoding.Init
+    @Encoding.Copy
+    public void set(Nullable&lt;T&gt; value) {
+<span class="nc" id="L18">      this.value = value;</span>
+<span class="nc" id="L19">    }</span>
+
+    @Encoding.Init
+    @Encoding.Naming(&quot;null*&quot;)
+    public void ofNull() {
+<span class="nc" id="L24">      this.value = Nullable.ofNull();</span>
+<span class="nc" id="L25">    }</span>
+
+    @Encoding.Init
+    @Encoding.Naming(standard = StandardNaming.INIT)
+    public void ofNullable(T value) {
+<span class="nc" id="L30">      this.value = Nullable.of(value);</span>
+<span class="nc" id="L31">    }</span>
+
+    @Encoding.Build
+    public Nullable&lt;T&gt; build() {
+<span class="nc" id="L35">      return value;</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

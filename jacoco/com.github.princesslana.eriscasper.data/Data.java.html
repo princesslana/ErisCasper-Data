@@ -5,27 +5,45 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.princesslana.eriscasper.data.util.Jackson;
 import java.io.IOException;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class Data {
 
-<span class="fc" id="L11">  private static final ObjectMapper jackson = Jackson.newObjectMapper();</span>
+<span class="fc" id="L14">  private static final ObjectMapper jackson = Jackson.newObjectMapper();</span>
 
   private Data() {}
 
   public static &lt;T&gt; T fromJson(String json, Class&lt;T&gt; clazz) throws DataException {
     try {
-<span class="fc" id="L17">      return jackson.readValue(json, clazz);</span>
-<span class="nc" id="L18">    } catch (IOException e) {</span>
-<span class="nc" id="L19">      throw new DataException(e);</span>
+<span class="fc" id="L20">      return jackson.readValue(json, clazz);</span>
+<span class="nc" id="L21">    } catch (IOException e) {</span>
+<span class="nc" id="L22">      throw new DataException(e);</span>
     }
   }
 
   public static &lt;T&gt; T fromJson(JsonNode json, Class&lt;T&gt; clazz) throws DataException {
     try {
-<span class="fc" id="L25">      return jackson.treeToValue(json, clazz);</span>
-<span class="nc" id="L26">    } catch (JsonProcessingException e) {</span>
-<span class="nc" id="L27">      throw new DataException(e);</span>
+<span class="fc" id="L28">      return jackson.treeToValue(json, clazz);</span>
+<span class="nc" id="L29">    } catch (JsonProcessingException e) {</span>
+<span class="nc" id="L30">      throw new DataException(e);</span>
     }
+  }
+
+  public static String toJsonString(Object obj) throws DataException {
+    try {
+<span class="fc" id="L36">      return jackson.writeValueAsString(obj);</span>
+<span class="nc" id="L37">    } catch (JsonProcessingException e) {</span>
+<span class="nc" id="L38">      throw new DataException(e);</span>
+    }
+  }
+
+  public static String toQueryString(Object obj) {
+<span class="fc" id="L43">    Iterable&lt;Map.Entry&lt;String, JsonNode&gt;&gt; iterableFields = () -&gt; jackson.valueToTree(obj).fields();</span>
+<span class="fc" id="L44">    return StreamSupport.stream(iterableFields.spliterator(), false)</span>
+<span class="fc" id="L45">        .map(e -&gt; e.getKey() + &quot;=&quot; + e.getValue())</span>
+<span class="fc" id="L46">        .collect(Collectors.joining(&quot;&amp;&quot;));</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

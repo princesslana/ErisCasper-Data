@@ -1,2 +1,4 @@
 com.github.princesslana.eriscasper.data
+com.github.princesslana.eriscasper.data.gateway
+com.github.princesslana.eriscasper.data.immutable.encoding
 com.github.princesslana.eriscasper.data.resource
