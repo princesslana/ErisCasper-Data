@@ -95,7 +95,7 @@
 <a class="jxr_linenumber" name="L87" href="#L87">87</a>    @Deprecated
 <a class="jxr_linenumber" name="L88" href="#L88">88</a>    @JsonDeserialize
 <a class="jxr_linenumber" name="L89" href="#L89">89</a>    @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L90" href="#L90">90</a>    <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ResumedEvent.html">Json</a>
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>    <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Json</a>
 <a class="jxr_linenumber" name="L91" href="#L91">91</a>        <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEventWrapper.html">MessageDeleteBulkEventWrapper</a> {
 <a class="jxr_linenumber" name="L92" href="#L92">92</a>      @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEventData.html">MessageDeleteBulkEventData</a> unwrap;
 <a class="jxr_linenumber" name="L93" href="#L93">93</a>      @JsonProperty(<span class="jxr_string">"unwrap"</span>)
@@ -114,7 +114,7 @@
 <a class="jxr_linenumber" name="L106" href="#L106">106</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>   @Deprecated
 <a class="jxr_linenumber" name="L108" href="#L108">108</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L109" href="#L109">109</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEvent.html">MessageDeleteBulkEvent</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ResumedEvent.html">Json</a> json) {
+<a class="jxr_linenumber" name="L109" href="#L109">109</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEvent.html">MessageDeleteBulkEvent</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Json</a> json) {
 <a class="jxr_linenumber" name="L110" href="#L110">110</a>     <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEvent.html">MessageDeleteBulkEvent</a> instance = MessageDeleteBulkEvent.of(json.unwrap);
 <a class="jxr_linenumber" name="L111" href="#L111">111</a>     <strong class="jxr_keyword">return</strong> instance;
 <a class="jxr_linenumber" name="L112" href="#L112">112</a>   }

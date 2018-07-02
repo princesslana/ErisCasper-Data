@@ -235,7 +235,7 @@
 <a class="jxr_linenumber" name="L227" href="#L227">227</a>   @Deprecated
 <a class="jxr_linenumber" name="L228" href="#L228">228</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L229" href="#L229">229</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L230" href="#L230">230</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/GetChannelMessagesRequest.html">GetChannelMessagesRequest</a> {
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/GetChannelMessagesRequest.html">GetChannelMessagesRequest</a> {
 <a class="jxr_linenumber" name="L231" href="#L231">231</a>     Optional&lt;Snowflake&gt; around = Optional.empty();
 <a class="jxr_linenumber" name="L232" href="#L232">232</a>     Optional&lt;Snowflake&gt; before = Optional.empty();
 <a class="jxr_linenumber" name="L233" href="#L233">233</a>     Optional&lt;Snowflake&gt; after = Optional.empty();
@@ -273,7 +273,7 @@
 <a class="jxr_linenumber" name="L265" href="#L265">265</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L266" href="#L266">266</a>   @Deprecated
 <a class="jxr_linenumber" name="L267" href="#L267">267</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L268" href="#L268">268</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetChannelMessagesRequest.html">ImmutableGetChannelMessagesRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Json</a> json) {
+<a class="jxr_linenumber" name="L268" href="#L268">268</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetChannelMessagesRequest.html">ImmutableGetChannelMessagesRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Json</a> json) {
 <a class="jxr_linenumber" name="L269" href="#L269">269</a>     ImmutableGetChannelMessagesRequest.Builder builder = ImmutableGetChannelMessagesRequest.builder();
 <a class="jxr_linenumber" name="L270" href="#L270">270</a>     <strong class="jxr_keyword">if</strong> (json.around != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L271" href="#L271">271</a>       builder.around(json.around);
@@ -322,13 +322,13 @@
 <a class="jxr_linenumber" name="L314" href="#L314">314</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L315" href="#L315">315</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L316" href="#L316">316</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L317" href="#L317">317</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> {
+<a class="jxr_linenumber" name="L317" href="#L317">317</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> {
 <a class="jxr_linenumber" name="L318" href="#L318">318</a>     <strong class="jxr_keyword">private</strong> @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> around;
 <a class="jxr_linenumber" name="L319" href="#L319">319</a>     <strong class="jxr_keyword">private</strong> @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> before;
 <a class="jxr_linenumber" name="L320" href="#L320">320</a>     <strong class="jxr_keyword">private</strong> @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> after;
 <a class="jxr_linenumber" name="L321" href="#L321">321</a>     <strong class="jxr_keyword">private</strong> @Nullable Long limit;
 <a class="jxr_linenumber" name="L322" href="#L322">322</a> 
-<a class="jxr_linenumber" name="L323" href="#L323">323</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a>() {
+<a class="jxr_linenumber" name="L323" href="#L323">323</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a>() {
 <a class="jxr_linenumber" name="L324" href="#L324">324</a>     }
 <a class="jxr_linenumber" name="L325" href="#L325">325</a> 
 <a class="jxr_linenumber" name="L326" href="#L326">326</a>     <em class="jxr_javadoccomment">/**</em>
@@ -339,7 +339,7 @@
 <a class="jxr_linenumber" name="L331" href="#L331">331</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L332" href="#L332">332</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L333" href="#L333">333</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L334" href="#L334">334</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/GetChannelMessagesRequest.html">GetChannelMessagesRequest</a> instance) {
+<a class="jxr_linenumber" name="L334" href="#L334">334</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/GetChannelMessagesRequest.html">GetChannelMessagesRequest</a> instance) {
 <a class="jxr_linenumber" name="L335" href="#L335">335</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L336" href="#L336">336</a>       Optional&lt;Snowflake&gt; aroundOptional = instance.getAround();
 <a class="jxr_linenumber" name="L337" href="#L337">337</a>       <strong class="jxr_keyword">if</strong> (aroundOptional.isPresent()) {
@@ -366,7 +366,7 @@
 <a class="jxr_linenumber" name="L358" href="#L358">358</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L359" href="#L359">359</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L360" href="#L360">360</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L361" href="#L361">361</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> around(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> around) {
+<a class="jxr_linenumber" name="L361" href="#L361">361</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> around(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> around) {
 <a class="jxr_linenumber" name="L362" href="#L362">362</a>       <strong class="jxr_keyword">this</strong>.around = Objects.requireNonNull(around, <span class="jxr_string">"around"</span>);
 <a class="jxr_linenumber" name="L363" href="#L363">363</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L364" href="#L364">364</a>     }
@@ -378,7 +378,7 @@
 <a class="jxr_linenumber" name="L370" href="#L370">370</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L371" href="#L371">371</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L372" href="#L372">372</a>     @JsonProperty(<span class="jxr_string">"around"</span>)
-<a class="jxr_linenumber" name="L373" href="#L373">373</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> around(Optional&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; around) {
+<a class="jxr_linenumber" name="L373" href="#L373">373</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> around(Optional&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; around) {
 <a class="jxr_linenumber" name="L374" href="#L374">374</a>       <strong class="jxr_keyword">this</strong>.around = around.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L375" href="#L375">375</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L376" href="#L376">376</a>     }
@@ -389,7 +389,7 @@
 <a class="jxr_linenumber" name="L381" href="#L381">381</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L382" href="#L382">382</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L383" href="#L383">383</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L384" href="#L384">384</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> before(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> before) {
+<a class="jxr_linenumber" name="L384" href="#L384">384</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> before(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> before) {
 <a class="jxr_linenumber" name="L385" href="#L385">385</a>       <strong class="jxr_keyword">this</strong>.before = Objects.requireNonNull(before, <span class="jxr_string">"before"</span>);
 <a class="jxr_linenumber" name="L386" href="#L386">386</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L387" href="#L387">387</a>     }
@@ -401,7 +401,7 @@
 <a class="jxr_linenumber" name="L393" href="#L393">393</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L394" href="#L394">394</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L395" href="#L395">395</a>     @JsonProperty(<span class="jxr_string">"before"</span>)
-<a class="jxr_linenumber" name="L396" href="#L396">396</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> before(Optional&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; before) {
+<a class="jxr_linenumber" name="L396" href="#L396">396</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> before(Optional&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; before) {
 <a class="jxr_linenumber" name="L397" href="#L397">397</a>       <strong class="jxr_keyword">this</strong>.before = before.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L398" href="#L398">398</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L399" href="#L399">399</a>     }
@@ -412,7 +412,7 @@
 <a class="jxr_linenumber" name="L404" href="#L404">404</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L405" href="#L405">405</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L406" href="#L406">406</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L407" href="#L407">407</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> after(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> after) {
+<a class="jxr_linenumber" name="L407" href="#L407">407</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> after(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> after) {
 <a class="jxr_linenumber" name="L408" href="#L408">408</a>       <strong class="jxr_keyword">this</strong>.after = Objects.requireNonNull(after, <span class="jxr_string">"after"</span>);
 <a class="jxr_linenumber" name="L409" href="#L409">409</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L410" href="#L410">410</a>     }
@@ -424,7 +424,7 @@
 <a class="jxr_linenumber" name="L416" href="#L416">416</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L417" href="#L417">417</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L418" href="#L418">418</a>     @JsonProperty(<span class="jxr_string">"after"</span>)
-<a class="jxr_linenumber" name="L419" href="#L419">419</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> after(Optional&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; after) {
+<a class="jxr_linenumber" name="L419" href="#L419">419</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> after(Optional&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; after) {
 <a class="jxr_linenumber" name="L420" href="#L420">420</a>       <strong class="jxr_keyword">this</strong>.after = after.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L421" href="#L421">421</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L422" href="#L422">422</a>     }
@@ -435,7 +435,7 @@
 <a class="jxr_linenumber" name="L427" href="#L427">427</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for chained invocation</em>
 <a class="jxr_linenumber" name="L428" href="#L428">428</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L429" href="#L429">429</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L430" href="#L430">430</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> limit(<strong class="jxr_keyword">long</strong> limit) {
+<a class="jxr_linenumber" name="L430" href="#L430">430</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> limit(<strong class="jxr_keyword">long</strong> limit) {
 <a class="jxr_linenumber" name="L431" href="#L431">431</a>       <strong class="jxr_keyword">this</strong>.limit = limit;
 <a class="jxr_linenumber" name="L432" href="#L432">432</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L433" href="#L433">433</a>     }
@@ -447,7 +447,7 @@
 <a class="jxr_linenumber" name="L439" href="#L439">439</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L440" href="#L440">440</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L441" href="#L441">441</a>     @JsonProperty(<span class="jxr_string">"limit"</span>)
-<a class="jxr_linenumber" name="L442" href="#L442">442</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> limit(Optional&lt;Long&gt; limit) {
+<a class="jxr_linenumber" name="L442" href="#L442">442</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> limit(Optional&lt;Long&gt; limit) {
 <a class="jxr_linenumber" name="L443" href="#L443">443</a>       <strong class="jxr_keyword">this</strong>.limit = limit.orElse(<strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="L444" href="#L444">444</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L445" href="#L445">445</a>     }

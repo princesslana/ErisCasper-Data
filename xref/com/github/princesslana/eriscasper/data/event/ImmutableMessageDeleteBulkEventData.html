@@ -149,7 +149,7 @@
 <a class="jxr_linenumber" name="L141" href="#L141">141</a>   @Deprecated
 <a class="jxr_linenumber" name="L142" href="#L142">142</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L143" href="#L143">143</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L144" href="#L144">144</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ResumedEvent.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEventData.html">MessageDeleteBulkEventData</a> {
+<a class="jxr_linenumber" name="L144" href="#L144">144</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEventData.html">MessageDeleteBulkEventData</a> {
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>     ImmutableList&lt;Snowflake&gt; ids = ImmutableList.of();
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>     @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId;
 <a class="jxr_linenumber" name="L147" href="#L147">147</a>     @JsonProperty(<span class="jxr_string">"ids"</span>)
@@ -173,7 +173,7 @@
 <a class="jxr_linenumber" name="L165" href="#L165">165</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>   @Deprecated
 <a class="jxr_linenumber" name="L167" href="#L167">167</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L168" href="#L168">168</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteBulkEventData.html">ImmutableMessageDeleteBulkEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ResumedEvent.html">Json</a> json) {
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteBulkEventData.html">ImmutableMessageDeleteBulkEventData</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Json</a> json) {
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>     ImmutableMessageDeleteBulkEventData.Builder builder = ImmutableMessageDeleteBulkEventData.builder();
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>     <strong class="jxr_keyword">if</strong> (json.ids != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L171" href="#L171">171</a>       builder.addAllIds(json.ids);
@@ -216,14 +216,14 @@
 <a class="jxr_linenumber" name="L208" href="#L208">208</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L209" href="#L209">209</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L210" href="#L210">210</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L211" href="#L211">211</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> {
+<a class="jxr_linenumber" name="L211" href="#L211">211</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> {
 <a class="jxr_linenumber" name="L212" href="#L212">212</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_CHANNEL_ID = 0x1L;
 <a class="jxr_linenumber" name="L213" href="#L213">213</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">long</strong> initBits = 0x1L;
 <a class="jxr_linenumber" name="L214" href="#L214">214</a> 
 <a class="jxr_linenumber" name="L215" href="#L215">215</a>     <strong class="jxr_keyword">private</strong> ImmutableList.Builder&lt;Snowflake&gt; ids = ImmutableList.builder();
 <a class="jxr_linenumber" name="L216" href="#L216">216</a>     <strong class="jxr_keyword">private</strong> @Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId;
 <a class="jxr_linenumber" name="L217" href="#L217">217</a> 
-<a class="jxr_linenumber" name="L218" href="#L218">218</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a>() {
+<a class="jxr_linenumber" name="L218" href="#L218">218</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a>() {
 <a class="jxr_linenumber" name="L219" href="#L219">219</a>     }
 <a class="jxr_linenumber" name="L220" href="#L220">220</a> 
 <a class="jxr_linenumber" name="L221" href="#L221">221</a>     <em class="jxr_javadoccomment">/**</em>
@@ -235,7 +235,7 @@
 <a class="jxr_linenumber" name="L227" href="#L227">227</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L228" href="#L228">228</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L229" href="#L229">229</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L230" href="#L230">230</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEventData.html">MessageDeleteBulkEventData</a> instance) {
+<a class="jxr_linenumber" name="L230" href="#L230">230</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/event/MessageDeleteBulkEventData.html">MessageDeleteBulkEventData</a> instance) {
 <a class="jxr_linenumber" name="L231" href="#L231">231</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L232" href="#L232">232</a>       addAllIds(instance.getIds());
 <a class="jxr_linenumber" name="L233" href="#L233">233</a>       channelId(instance.getChannelId());
@@ -248,7 +248,7 @@
 <a class="jxr_linenumber" name="L240" href="#L240">240</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L241" href="#L241">241</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L242" href="#L242">242</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L243" href="#L243">243</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> addIds(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> element) {
+<a class="jxr_linenumber" name="L243" href="#L243">243</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> addIds(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> element) {
 <a class="jxr_linenumber" name="L244" href="#L244">244</a>       <strong class="jxr_keyword">this</strong>.ids.add(element);
 <a class="jxr_linenumber" name="L245" href="#L245">245</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L246" href="#L246">246</a>     }
@@ -259,7 +259,7 @@
 <a class="jxr_linenumber" name="L251" href="#L251">251</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L252" href="#L252">252</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L253" href="#L253">253</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> addIds(Snowflake... elements) {
+<a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> addIds(Snowflake... elements) {
 <a class="jxr_linenumber" name="L255" href="#L255">255</a>       <strong class="jxr_keyword">this</strong>.ids.add(elements);
 <a class="jxr_linenumber" name="L256" href="#L256">256</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L257" href="#L257">257</a>     }
@@ -271,7 +271,7 @@
 <a class="jxr_linenumber" name="L263" href="#L263">263</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L264" href="#L264">264</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L265" href="#L265">265</a>     @JsonProperty(<span class="jxr_string">"ids"</span>)
-<a class="jxr_linenumber" name="L266" href="#L266">266</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> ids(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
+<a class="jxr_linenumber" name="L266" href="#L266">266</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> ids(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
 <a class="jxr_linenumber" name="L267" href="#L267">267</a>       <strong class="jxr_keyword">this</strong>.ids = ImmutableList.builder();
 <a class="jxr_linenumber" name="L268" href="#L268">268</a>       <strong class="jxr_keyword">return</strong> addAllIds(elements);
 <a class="jxr_linenumber" name="L269" href="#L269">269</a>     }
@@ -282,7 +282,7 @@
 <a class="jxr_linenumber" name="L274" href="#L274">274</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L275" href="#L275">275</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L276" href="#L276">276</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L277" href="#L277">277</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> addAllIds(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
+<a class="jxr_linenumber" name="L277" href="#L277">277</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> addAllIds(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
 <a class="jxr_linenumber" name="L278" href="#L278">278</a>       <strong class="jxr_keyword">this</strong>.ids.addAll(elements);
 <a class="jxr_linenumber" name="L279" href="#L279">279</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L280" href="#L280">280</a>     }
@@ -294,7 +294,7 @@
 <a class="jxr_linenumber" name="L286" href="#L286">286</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L287" href="#L287">287</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L288" href="#L288">288</a>     @JsonProperty(<span class="jxr_string">"channel_id"</span>)
-<a class="jxr_linenumber" name="L289" href="#L289">289</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableGuildRoleDeleteEventData.html">Builder</a> channelId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId) {
+<a class="jxr_linenumber" name="L289" href="#L289">289</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/event/ImmutableMessageDeleteEventData.html">Builder</a> channelId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> channelId) {
 <a class="jxr_linenumber" name="L290" href="#L290">290</a>       <strong class="jxr_keyword">this</strong>.channelId = Objects.requireNonNull(channelId, <span class="jxr_string">"channelId"</span>);
 <a class="jxr_linenumber" name="L291" href="#L291">291</a>       initBits &amp;= ~INIT_BIT_CHANNEL_ID;
 <a class="jxr_linenumber" name="L292" href="#L292">292</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;

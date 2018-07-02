@@ -109,7 +109,7 @@
 <a class="jxr_linenumber" name="L101" href="#L101">101</a>   @Deprecated
 <a class="jxr_linenumber" name="L102" href="#L102">102</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L103" href="#L103">103</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L104" href="#L104">104</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Json</a>
+<a class="jxr_linenumber" name="L104" href="#L104">104</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Json</a>
 <a class="jxr_linenumber" name="L105" href="#L105">105</a>       <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyCurrentUserNickRequest.html">ModifyCurrentUserNickRequest</a> {
 <a class="jxr_linenumber" name="L106" href="#L106">106</a>     @Nullable String nick;
 <a class="jxr_linenumber" name="L107" href="#L107">107</a>     @JsonProperty(<span class="jxr_string">"nick"</span>)
@@ -127,7 +127,7 @@
 <a class="jxr_linenumber" name="L119" href="#L119">119</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L120" href="#L120">120</a>   @Deprecated
 <a class="jxr_linenumber" name="L121" href="#L121">121</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L122" href="#L122">122</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyCurrentUserNickRequest.html">ImmutableModifyCurrentUserNickRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Json</a> json) {
+<a class="jxr_linenumber" name="L122" href="#L122">122</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyCurrentUserNickRequest.html">ImmutableModifyCurrentUserNickRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Json</a> json) {
 <a class="jxr_linenumber" name="L123" href="#L123">123</a>     ImmutableModifyCurrentUserNickRequest.Builder builder = ImmutableModifyCurrentUserNickRequest.builder();
 <a class="jxr_linenumber" name="L124" href="#L124">124</a>     <strong class="jxr_keyword">if</strong> (json.nick != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L125" href="#L125">125</a>       builder.nick(json.nick);
@@ -167,13 +167,13 @@
 <a class="jxr_linenumber" name="L159" href="#L159">159</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L160" href="#L160">160</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L162" href="#L162">162</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> {
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> {
 <a class="jxr_linenumber" name="L163" href="#L163">163</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_NICK = 0x1L;
 <a class="jxr_linenumber" name="L164" href="#L164">164</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">long</strong> initBits = 0x1L;
 <a class="jxr_linenumber" name="L165" href="#L165">165</a> 
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>     <strong class="jxr_keyword">private</strong> @Nullable String nick;
 <a class="jxr_linenumber" name="L167" href="#L167">167</a> 
-<a class="jxr_linenumber" name="L168" href="#L168">168</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a>() {
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a>() {
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>     }
 <a class="jxr_linenumber" name="L170" href="#L170">170</a> 
 <a class="jxr_linenumber" name="L171" href="#L171">171</a>     <em class="jxr_javadoccomment">/**</em>
@@ -184,7 +184,7 @@
 <a class="jxr_linenumber" name="L176" href="#L176">176</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L177" href="#L177">177</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L178" href="#L178">178</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L179" href="#L179">179</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyCurrentUserNickRequest.html">ModifyCurrentUserNickRequest</a> instance) {
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyCurrentUserNickRequest.html">ModifyCurrentUserNickRequest</a> instance) {
 <a class="jxr_linenumber" name="L180" href="#L180">180</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L181" href="#L181">181</a>       nick(instance.getNick());
 <a class="jxr_linenumber" name="L182" href="#L182">182</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -197,7 +197,7 @@
 <a class="jxr_linenumber" name="L189" href="#L189">189</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L191" href="#L191">191</a>     @JsonProperty(<span class="jxr_string">"nick"</span>)
-<a class="jxr_linenumber" name="L192" href="#L192">192</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildMemberRequest.html">Builder</a> nick(String nick) {
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> nick(String nick) {
 <a class="jxr_linenumber" name="L193" href="#L193">193</a>       <strong class="jxr_keyword">this</strong>.nick = Objects.requireNonNull(nick, <span class="jxr_string">"nick"</span>);
 <a class="jxr_linenumber" name="L194" href="#L194">194</a>       initBits &amp;= ~INIT_BIT_NICK;
 <a class="jxr_linenumber" name="L195" href="#L195">195</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
