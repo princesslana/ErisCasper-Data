@@ -153,7 +153,7 @@
 <a class="jxr_linenumber" name="L145" href="#L145">145</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L146" href="#L146">146</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L147" href="#L147">147</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L148" href="#L148">148</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayStatusUpdatePayload.html">Builder</a> {
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> {
 <a class="jxr_linenumber" name="L149" href="#L149">149</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_SHARD_ID = 0x1L;
 <a class="jxr_linenumber" name="L150" href="#L150">150</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_NUM_SHARDS = 0x2L;
 <a class="jxr_linenumber" name="L151" href="#L151">151</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">long</strong> initBits = 0x3L;
@@ -161,7 +161,7 @@
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>     <strong class="jxr_keyword">private</strong> @Nullable Long shardId;
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>     <strong class="jxr_keyword">private</strong> @Nullable Long numShards;
 <a class="jxr_linenumber" name="L155" href="#L155">155</a> 
-<a class="jxr_linenumber" name="L156" href="#L156">156</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayStatusUpdatePayload.html">Builder</a>() {
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a>() {
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>     }
 <a class="jxr_linenumber" name="L158" href="#L158">158</a> 
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>     <em class="jxr_javadoccomment">/**</em>
@@ -172,7 +172,7 @@
 <a class="jxr_linenumber" name="L164" href="#L164">164</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L165" href="#L165">165</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L166" href="#L166">166</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L167" href="#L167">167</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayStatusUpdatePayload.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ShardPayload.html">ShardPayload</a> instance) {
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ShardPayload.html">ShardPayload</a> instance) {
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>       shardId(instance.getShardId());
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>       numShards(instance.getNumShards());
@@ -185,7 +185,7 @@
 <a class="jxr_linenumber" name="L177" href="#L177">177</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L178" href="#L178">178</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L179" href="#L179">179</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L180" href="#L180">180</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayStatusUpdatePayload.html">Builder</a> shardId(Long shardId) {
+<a class="jxr_linenumber" name="L180" href="#L180">180</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> shardId(Long shardId) {
 <a class="jxr_linenumber" name="L181" href="#L181">181</a>       <strong class="jxr_keyword">this</strong>.shardId = Objects.requireNonNull(shardId, <span class="jxr_string">"shardId"</span>);
 <a class="jxr_linenumber" name="L182" href="#L182">182</a>       initBits &amp;= ~INIT_BIT_SHARD_ID;
 <a class="jxr_linenumber" name="L183" href="#L183">183</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -197,7 +197,7 @@
 <a class="jxr_linenumber" name="L189" href="#L189">189</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L190" href="#L190">190</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L191" href="#L191">191</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L192" href="#L192">192</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayStatusUpdatePayload.html">Builder</a> numShards(Long numShards) {
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> numShards(Long numShards) {
 <a class="jxr_linenumber" name="L193" href="#L193">193</a>       <strong class="jxr_keyword">this</strong>.numShards = Objects.requireNonNull(numShards, <span class="jxr_string">"numShards"</span>);
 <a class="jxr_linenumber" name="L194" href="#L194">194</a>       initBits &amp;= ~INIT_BIT_NUM_SHARDS;
 <a class="jxr_linenumber" name="L195" href="#L195">195</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;

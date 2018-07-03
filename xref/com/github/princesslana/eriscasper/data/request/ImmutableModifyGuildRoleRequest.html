@@ -218,7 +218,7 @@
 <a class="jxr_linenumber" name="L210" href="#L210">210</a>   @Deprecated
 <a class="jxr_linenumber" name="L211" href="#L211">211</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L212" href="#L212">212</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L213" href="#L213">213</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildRoleRequest.html">ModifyGuildRoleRequest</a> {
+<a class="jxr_linenumber" name="L213" href="#L213">213</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildRoleRequest.html">ModifyGuildRoleRequest</a> {
 <a class="jxr_linenumber" name="L214" href="#L214">214</a>     @Nullable String name;
 <a class="jxr_linenumber" name="L215" href="#L215">215</a>     @Nullable Long permissions;
 <a class="jxr_linenumber" name="L216" href="#L216">216</a>     @Nullable Long color;
@@ -263,7 +263,7 @@
 <a class="jxr_linenumber" name="L255" href="#L255">255</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L256" href="#L256">256</a>   @Deprecated
 <a class="jxr_linenumber" name="L257" href="#L257">257</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L258" href="#L258">258</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildRoleRequest.html">ImmutableModifyGuildRoleRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Json</a> json) {
+<a class="jxr_linenumber" name="L258" href="#L258">258</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildRoleRequest.html">ImmutableModifyGuildRoleRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Json</a> json) {
 <a class="jxr_linenumber" name="L259" href="#L259">259</a>     ImmutableModifyGuildRoleRequest.Builder builder = ImmutableModifyGuildRoleRequest.builder();
 <a class="jxr_linenumber" name="L260" href="#L260">260</a>     <strong class="jxr_keyword">if</strong> (json.name != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L261" href="#L261">261</a>       builder.name(json.name);
@@ -315,7 +315,7 @@
 <a class="jxr_linenumber" name="L307" href="#L307">307</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L308" href="#L308">308</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L309" href="#L309">309</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L310" href="#L310">310</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> {
+<a class="jxr_linenumber" name="L310" href="#L310">310</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> {
 <a class="jxr_linenumber" name="L311" href="#L311">311</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_NAME = 0x1L;
 <a class="jxr_linenumber" name="L312" href="#L312">312</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_PERMISSIONS = 0x2L;
 <a class="jxr_linenumber" name="L313" href="#L313">313</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_COLOR = 0x4L;
@@ -329,7 +329,7 @@
 <a class="jxr_linenumber" name="L321" href="#L321">321</a>     <strong class="jxr_keyword">private</strong> @Nullable Boolean isHoist;
 <a class="jxr_linenumber" name="L322" href="#L322">322</a>     <strong class="jxr_keyword">private</strong> @Nullable Boolean isMentionable;
 <a class="jxr_linenumber" name="L323" href="#L323">323</a> 
-<a class="jxr_linenumber" name="L324" href="#L324">324</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a>() {
+<a class="jxr_linenumber" name="L324" href="#L324">324</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a>() {
 <a class="jxr_linenumber" name="L325" href="#L325">325</a>     }
 <a class="jxr_linenumber" name="L326" href="#L326">326</a> 
 <a class="jxr_linenumber" name="L327" href="#L327">327</a>     <em class="jxr_javadoccomment">/**</em>
@@ -340,7 +340,7 @@
 <a class="jxr_linenumber" name="L332" href="#L332">332</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L333" href="#L333">333</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L334" href="#L334">334</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L335" href="#L335">335</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildRoleRequest.html">ModifyGuildRoleRequest</a> instance) {
+<a class="jxr_linenumber" name="L335" href="#L335">335</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildRoleRequest.html">ModifyGuildRoleRequest</a> instance) {
 <a class="jxr_linenumber" name="L336" href="#L336">336</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L337" href="#L337">337</a>       name(instance.getName());
 <a class="jxr_linenumber" name="L338" href="#L338">338</a>       permissions(instance.getPermissions());
@@ -357,7 +357,7 @@
 <a class="jxr_linenumber" name="L349" href="#L349">349</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L350" href="#L350">350</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L351" href="#L351">351</a>     @JsonProperty(<span class="jxr_string">"name"</span>)
-<a class="jxr_linenumber" name="L352" href="#L352">352</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> name(String name) {
+<a class="jxr_linenumber" name="L352" href="#L352">352</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> name(String name) {
 <a class="jxr_linenumber" name="L353" href="#L353">353</a>       <strong class="jxr_keyword">this</strong>.name = Objects.requireNonNull(name, <span class="jxr_string">"name"</span>);
 <a class="jxr_linenumber" name="L354" href="#L354">354</a>       initBits &amp;= ~INIT_BIT_NAME;
 <a class="jxr_linenumber" name="L355" href="#L355">355</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -370,7 +370,7 @@
 <a class="jxr_linenumber" name="L362" href="#L362">362</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L363" href="#L363">363</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L364" href="#L364">364</a>     @JsonProperty(<span class="jxr_string">"permissions"</span>)
-<a class="jxr_linenumber" name="L365" href="#L365">365</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> permissions(Long permissions) {
+<a class="jxr_linenumber" name="L365" href="#L365">365</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> permissions(Long permissions) {
 <a class="jxr_linenumber" name="L366" href="#L366">366</a>       <strong class="jxr_keyword">this</strong>.permissions = Objects.requireNonNull(permissions, <span class="jxr_string">"permissions"</span>);
 <a class="jxr_linenumber" name="L367" href="#L367">367</a>       initBits &amp;= ~INIT_BIT_PERMISSIONS;
 <a class="jxr_linenumber" name="L368" href="#L368">368</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -383,7 +383,7 @@
 <a class="jxr_linenumber" name="L375" href="#L375">375</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L376" href="#L376">376</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L377" href="#L377">377</a>     @JsonProperty(<span class="jxr_string">"color"</span>)
-<a class="jxr_linenumber" name="L378" href="#L378">378</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> color(Long color) {
+<a class="jxr_linenumber" name="L378" href="#L378">378</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> color(Long color) {
 <a class="jxr_linenumber" name="L379" href="#L379">379</a>       <strong class="jxr_keyword">this</strong>.color = Objects.requireNonNull(color, <span class="jxr_string">"color"</span>);
 <a class="jxr_linenumber" name="L380" href="#L380">380</a>       initBits &amp;= ~INIT_BIT_COLOR;
 <a class="jxr_linenumber" name="L381" href="#L381">381</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -396,7 +396,7 @@
 <a class="jxr_linenumber" name="L388" href="#L388">388</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L389" href="#L389">389</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L390" href="#L390">390</a>     @JsonProperty(<span class="jxr_string">"hoist"</span>)
-<a class="jxr_linenumber" name="L391" href="#L391">391</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> isHoist(Boolean isHoist) {
+<a class="jxr_linenumber" name="L391" href="#L391">391</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> isHoist(Boolean isHoist) {
 <a class="jxr_linenumber" name="L392" href="#L392">392</a>       <strong class="jxr_keyword">this</strong>.isHoist = Objects.requireNonNull(isHoist, <span class="jxr_string">"isHoist"</span>);
 <a class="jxr_linenumber" name="L393" href="#L393">393</a>       initBits &amp;= ~INIT_BIT_IS_HOIST;
 <a class="jxr_linenumber" name="L394" href="#L394">394</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -409,7 +409,7 @@
 <a class="jxr_linenumber" name="L401" href="#L401">401</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L402" href="#L402">402</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L403" href="#L403">403</a>     @JsonProperty(<span class="jxr_string">"mentionable"</span>)
-<a class="jxr_linenumber" name="L404" href="#L404">404</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">Builder</a> isMentionable(Boolean isMentionable) {
+<a class="jxr_linenumber" name="L404" href="#L404">404</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> isMentionable(Boolean isMentionable) {
 <a class="jxr_linenumber" name="L405" href="#L405">405</a>       <strong class="jxr_keyword">this</strong>.isMentionable = Objects.requireNonNull(isMentionable, <span class="jxr_string">"isMentionable"</span>);
 <a class="jxr_linenumber" name="L406" href="#L406">406</a>       initBits &amp;= ~INIT_BIT_IS_MENTIONABLE;
 <a class="jxr_linenumber" name="L407" href="#L407">407</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
