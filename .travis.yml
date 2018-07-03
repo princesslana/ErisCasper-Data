@@ -2,7 +2,8 @@ language: java
 
 env:
   global:
-  - MAVEN_OPTS="-Drevision=$(git describe --dirty --tags)-SNAPSHOT"
+  - EC_DATA_VERSION="$(git describe --dirty --tags)-SNAPSHOT"
+  - MAVEN_OPTS="-Drevision=$EC_DATA_VERSION -Dproperty=revision -DnewVersion=$EC_DATA_VERSION -DgenerateBackupPoms=false"
 
 before_install:
 - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./etc/extract_secrets.sh; fi'
@@ -26,15 +27,17 @@ jobs:
       script: mvn -B verify
     - stage: snapshot
       jdk: openjdk8
-      script: mvn -s etc/settings.xml -B deploy -P release
+      script: mvn -s etc/settings.xml -B versions:set-property deploy -P release
     - stage: release
       jdk: openjdk8
       env:
-        - MAVEN_OPTS="-Drevision=$(git describe --dirty --tags)"
-      script: mvn -s etc/settings.xml -B deploy -P release
+        - EC_DATA_VERSION=$(git describe --dirty --tags)
+        - MAVEN_OPTS="-Drevision=$EC_DATA_VERSION -Dproperty=revision -DnewVersion=$EC_DATA_VERSION -DgenerateBackupPoms=false"
+      script: mvn -s etc/settings.xml -B versions:set-property deploy -P release
     - jdk: openjdk8
       env:
-        - MAVEN_OPTS="-Drevision=$(git describe --dirty --tags)"
+        - EC_DATA_VERSION=$(git describe --dirty --tags)
+        - MAVEN_OPTS="-Drevision=$EC_DATA_VERSION -Dproperty=revision -DnewVersion=$EC_DATA_VERSION -DgenerateBackupPoms=false"
       script: mvn -B site
       deploy:
         edge:
