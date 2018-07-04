@@ -164,7 +164,7 @@
 <a class="jxr_linenumber" name="L156" href="#L156">156</a>   @Deprecated
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L158" href="#L158">158</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L159" href="#L159">159</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Json</a>
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Json</a>
 <a class="jxr_linenumber" name="L160" href="#L160">160</a>       <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildIntegrationRequest.html">ModifyGuildIntegrationRequest</a> {
 <a class="jxr_linenumber" name="L161" href="#L161">161</a>     @Nullable Long expireBehavior;
 <a class="jxr_linenumber" name="L162" href="#L162">162</a>     @Nullable Long expireGracePeriod;
@@ -196,7 +196,7 @@
 <a class="jxr_linenumber" name="L188" href="#L188">188</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L189" href="#L189">189</a>   @Deprecated
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L191" href="#L191">191</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">ImmutableModifyGuildIntegrationRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Json</a> json) {
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyGuildIntegrationRequest.html">ImmutableModifyGuildIntegrationRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Json</a> json) {
 <a class="jxr_linenumber" name="L192" href="#L192">192</a>     ImmutableModifyGuildIntegrationRequest.Builder builder = ImmutableModifyGuildIntegrationRequest.builder();
 <a class="jxr_linenumber" name="L193" href="#L193">193</a>     <strong class="jxr_keyword">if</strong> (json.expireBehavior != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L194" href="#L194">194</a>       builder.expireBehavior(json.expireBehavior);
@@ -242,7 +242,7 @@
 <a class="jxr_linenumber" name="L234" href="#L234">234</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L235" href="#L235">235</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L236" href="#L236">236</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L237" href="#L237">237</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> {
+<a class="jxr_linenumber" name="L237" href="#L237">237</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> {
 <a class="jxr_linenumber" name="L238" href="#L238">238</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_EXPIRE_BEHAVIOR = 0x1L;
 <a class="jxr_linenumber" name="L239" href="#L239">239</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_EXPIRE_GRACE_PERIOD = 0x2L;
 <a class="jxr_linenumber" name="L240" href="#L240">240</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_IS_ENABLE_EMOTICONS = 0x4L;
@@ -252,7 +252,7 @@
 <a class="jxr_linenumber" name="L244" href="#L244">244</a>     <strong class="jxr_keyword">private</strong> @Nullable Long expireGracePeriod;
 <a class="jxr_linenumber" name="L245" href="#L245">245</a>     <strong class="jxr_keyword">private</strong> @Nullable Boolean isEnableEmoticons;
 <a class="jxr_linenumber" name="L246" href="#L246">246</a> 
-<a class="jxr_linenumber" name="L247" href="#L247">247</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a>() {
+<a class="jxr_linenumber" name="L247" href="#L247">247</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a>() {
 <a class="jxr_linenumber" name="L248" href="#L248">248</a>     }
 <a class="jxr_linenumber" name="L249" href="#L249">249</a> 
 <a class="jxr_linenumber" name="L250" href="#L250">250</a>     <em class="jxr_javadoccomment">/**</em>
@@ -263,7 +263,7 @@
 <a class="jxr_linenumber" name="L255" href="#L255">255</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L256" href="#L256">256</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L257" href="#L257">257</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L258" href="#L258">258</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildIntegrationRequest.html">ModifyGuildIntegrationRequest</a> instance) {
+<a class="jxr_linenumber" name="L258" href="#L258">258</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ModifyGuildIntegrationRequest.html">ModifyGuildIntegrationRequest</a> instance) {
 <a class="jxr_linenumber" name="L259" href="#L259">259</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L260" href="#L260">260</a>       expireBehavior(instance.getExpireBehavior());
 <a class="jxr_linenumber" name="L261" href="#L261">261</a>       expireGracePeriod(instance.getExpireGracePeriod());
@@ -278,7 +278,7 @@
 <a class="jxr_linenumber" name="L270" href="#L270">270</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L271" href="#L271">271</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L272" href="#L272">272</a>     @JsonProperty(<span class="jxr_string">"expire_behavior"</span>)
-<a class="jxr_linenumber" name="L273" href="#L273">273</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> expireBehavior(Long expireBehavior) {
+<a class="jxr_linenumber" name="L273" href="#L273">273</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> expireBehavior(Long expireBehavior) {
 <a class="jxr_linenumber" name="L274" href="#L274">274</a>       <strong class="jxr_keyword">this</strong>.expireBehavior = Objects.requireNonNull(expireBehavior, <span class="jxr_string">"expireBehavior"</span>);
 <a class="jxr_linenumber" name="L275" href="#L275">275</a>       initBits &amp;= ~INIT_BIT_EXPIRE_BEHAVIOR;
 <a class="jxr_linenumber" name="L276" href="#L276">276</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -291,7 +291,7 @@
 <a class="jxr_linenumber" name="L283" href="#L283">283</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L284" href="#L284">284</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L285" href="#L285">285</a>     @JsonProperty(<span class="jxr_string">"expire_grace_period"</span>)
-<a class="jxr_linenumber" name="L286" href="#L286">286</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> expireGracePeriod(Long expireGracePeriod) {
+<a class="jxr_linenumber" name="L286" href="#L286">286</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> expireGracePeriod(Long expireGracePeriod) {
 <a class="jxr_linenumber" name="L287" href="#L287">287</a>       <strong class="jxr_keyword">this</strong>.expireGracePeriod = Objects.requireNonNull(expireGracePeriod, <span class="jxr_string">"expireGracePeriod"</span>);
 <a class="jxr_linenumber" name="L288" href="#L288">288</a>       initBits &amp;= ~INIT_BIT_EXPIRE_GRACE_PERIOD;
 <a class="jxr_linenumber" name="L289" href="#L289">289</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -304,7 +304,7 @@
 <a class="jxr_linenumber" name="L296" href="#L296">296</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L297" href="#L297">297</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L298" href="#L298">298</a>     @JsonProperty(<span class="jxr_string">"enable_emoticons"</span>)
-<a class="jxr_linenumber" name="L299" href="#L299">299</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> isEnableEmoticons(Boolean isEnableEmoticons) {
+<a class="jxr_linenumber" name="L299" href="#L299">299</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> isEnableEmoticons(Boolean isEnableEmoticons) {
 <a class="jxr_linenumber" name="L300" href="#L300">300</a>       <strong class="jxr_keyword">this</strong>.isEnableEmoticons = Objects.requireNonNull(isEnableEmoticons, <span class="jxr_string">"isEnableEmoticons"</span>);
 <a class="jxr_linenumber" name="L301" href="#L301">301</a>       initBits &amp;= ~INIT_BIT_IS_ENABLE_EMOTICONS;
 <a class="jxr_linenumber" name="L302" href="#L302">302</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;

@@ -176,7 +176,7 @@
 <a class="jxr_linenumber" name="L168" href="#L168">168</a>   @Deprecated
 <a class="jxr_linenumber" name="L169" href="#L169">169</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L170" href="#L170">170</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L171" href="#L171">171</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/CreateGuildEmojiRequest.html">CreateGuildEmojiRequest</a> {
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/CreateGuildEmojiRequest.html">CreateGuildEmojiRequest</a> {
 <a class="jxr_linenumber" name="L172" href="#L172">172</a>     @Nullable String name;
 <a class="jxr_linenumber" name="L173" href="#L173">173</a>     @Nullable String image;
 <a class="jxr_linenumber" name="L174" href="#L174">174</a>     ImmutableList&lt;Snowflake&gt; roles = ImmutableList.of();
@@ -207,7 +207,7 @@
 <a class="jxr_linenumber" name="L199" href="#L199">199</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L200" href="#L200">200</a>   @Deprecated
 <a class="jxr_linenumber" name="L201" href="#L201">201</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L202" href="#L202">202</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableCreateGuildEmojiRequest.html">ImmutableCreateGuildEmojiRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Json</a> json) {
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableCreateGuildEmojiRequest.html">ImmutableCreateGuildEmojiRequest</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Json</a> json) {
 <a class="jxr_linenumber" name="L203" href="#L203">203</a>     ImmutableCreateGuildEmojiRequest.Builder builder = ImmutableCreateGuildEmojiRequest.builder();
 <a class="jxr_linenumber" name="L204" href="#L204">204</a>     <strong class="jxr_keyword">if</strong> (json.name != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L205" href="#L205">205</a>       builder.name(json.name);
@@ -253,7 +253,7 @@
 <a class="jxr_linenumber" name="L245" href="#L245">245</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L246" href="#L246">246</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L247" href="#L247">247</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L248" href="#L248">248</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> {
+<a class="jxr_linenumber" name="L248" href="#L248">248</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> {
 <a class="jxr_linenumber" name="L249" href="#L249">249</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_NAME = 0x1L;
 <a class="jxr_linenumber" name="L250" href="#L250">250</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_IMAGE = 0x2L;
 <a class="jxr_linenumber" name="L251" href="#L251">251</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">long</strong> initBits = 0x3L;
@@ -262,7 +262,7 @@
 <a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">private</strong> @Nullable String image;
 <a class="jxr_linenumber" name="L255" href="#L255">255</a>     <strong class="jxr_keyword">private</strong> ImmutableList.Builder&lt;Snowflake&gt; roles = ImmutableList.builder();
 <a class="jxr_linenumber" name="L256" href="#L256">256</a> 
-<a class="jxr_linenumber" name="L257" href="#L257">257</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a>() {
+<a class="jxr_linenumber" name="L257" href="#L257">257</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a>() {
 <a class="jxr_linenumber" name="L258" href="#L258">258</a>     }
 <a class="jxr_linenumber" name="L259" href="#L259">259</a> 
 <a class="jxr_linenumber" name="L260" href="#L260">260</a>     <em class="jxr_javadoccomment">/**</em>
@@ -274,7 +274,7 @@
 <a class="jxr_linenumber" name="L266" href="#L266">266</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L267" href="#L267">267</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L268" href="#L268">268</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L269" href="#L269">269</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/CreateGuildEmojiRequest.html">CreateGuildEmojiRequest</a> instance) {
+<a class="jxr_linenumber" name="L269" href="#L269">269</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/request/CreateGuildEmojiRequest.html">CreateGuildEmojiRequest</a> instance) {
 <a class="jxr_linenumber" name="L270" href="#L270">270</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L271" href="#L271">271</a>       name(instance.getName());
 <a class="jxr_linenumber" name="L272" href="#L272">272</a>       image(instance.getImage());
@@ -289,7 +289,7 @@
 <a class="jxr_linenumber" name="L281" href="#L281">281</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L282" href="#L282">282</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L283" href="#L283">283</a>     @JsonProperty(<span class="jxr_string">"name"</span>)
-<a class="jxr_linenumber" name="L284" href="#L284">284</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> name(String name) {
+<a class="jxr_linenumber" name="L284" href="#L284">284</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> name(String name) {
 <a class="jxr_linenumber" name="L285" href="#L285">285</a>       <strong class="jxr_keyword">this</strong>.name = Objects.requireNonNull(name, <span class="jxr_string">"name"</span>);
 <a class="jxr_linenumber" name="L286" href="#L286">286</a>       initBits &amp;= ~INIT_BIT_NAME;
 <a class="jxr_linenumber" name="L287" href="#L287">287</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -302,7 +302,7 @@
 <a class="jxr_linenumber" name="L294" href="#L294">294</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L295" href="#L295">295</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L296" href="#L296">296</a>     @JsonProperty(<span class="jxr_string">"image"</span>)
-<a class="jxr_linenumber" name="L297" href="#L297">297</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> image(String image) {
+<a class="jxr_linenumber" name="L297" href="#L297">297</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> image(String image) {
 <a class="jxr_linenumber" name="L298" href="#L298">298</a>       <strong class="jxr_keyword">this</strong>.image = Objects.requireNonNull(image, <span class="jxr_string">"image"</span>);
 <a class="jxr_linenumber" name="L299" href="#L299">299</a>       initBits &amp;= ~INIT_BIT_IMAGE;
 <a class="jxr_linenumber" name="L300" href="#L300">300</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -314,7 +314,7 @@
 <a class="jxr_linenumber" name="L306" href="#L306">306</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L307" href="#L307">307</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L308" href="#L308">308</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L309" href="#L309">309</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> addRoles(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> element) {
+<a class="jxr_linenumber" name="L309" href="#L309">309</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> addRoles(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> element) {
 <a class="jxr_linenumber" name="L310" href="#L310">310</a>       <strong class="jxr_keyword">this</strong>.roles.add(element);
 <a class="jxr_linenumber" name="L311" href="#L311">311</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L312" href="#L312">312</a>     }
@@ -325,7 +325,7 @@
 <a class="jxr_linenumber" name="L317" href="#L317">317</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L318" href="#L318">318</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L319" href="#L319">319</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L320" href="#L320">320</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> addRoles(Snowflake... elements) {
+<a class="jxr_linenumber" name="L320" href="#L320">320</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> addRoles(Snowflake... elements) {
 <a class="jxr_linenumber" name="L321" href="#L321">321</a>       <strong class="jxr_keyword">this</strong>.roles.add(elements);
 <a class="jxr_linenumber" name="L322" href="#L322">322</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L323" href="#L323">323</a>     }
@@ -337,7 +337,7 @@
 <a class="jxr_linenumber" name="L329" href="#L329">329</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L330" href="#L330">330</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L331" href="#L331">331</a>     @JsonProperty(<span class="jxr_string">"roles"</span>)
-<a class="jxr_linenumber" name="L332" href="#L332">332</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> roles(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
+<a class="jxr_linenumber" name="L332" href="#L332">332</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> roles(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
 <a class="jxr_linenumber" name="L333" href="#L333">333</a>       <strong class="jxr_keyword">this</strong>.roles = ImmutableList.builder();
 <a class="jxr_linenumber" name="L334" href="#L334">334</a>       <strong class="jxr_keyword">return</strong> addAllRoles(elements);
 <a class="jxr_linenumber" name="L335" href="#L335">335</a>     }
@@ -348,7 +348,7 @@
 <a class="jxr_linenumber" name="L340" href="#L340">340</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L341" href="#L341">341</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L342" href="#L342">342</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L343" href="#L343">343</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableModifyWebhookRequest.html">Builder</a> addAllRoles(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
+<a class="jxr_linenumber" name="L343" href="#L343">343</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/request/ImmutableGetGuildPruneCountRequest.html">Builder</a> addAllRoles(Iterable&lt;? <strong class="jxr_keyword">extends</strong> Snowflake&gt; elements) {
 <a class="jxr_linenumber" name="L344" href="#L344">344</a>       <strong class="jxr_keyword">this</strong>.roles.addAll(elements);
 <a class="jxr_linenumber" name="L345" href="#L345">345</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L346" href="#L346">346</a>     }

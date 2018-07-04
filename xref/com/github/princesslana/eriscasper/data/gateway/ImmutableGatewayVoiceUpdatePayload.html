@@ -186,7 +186,7 @@
 <a class="jxr_linenumber" name="L178" href="#L178">178</a>   @Deprecated
 <a class="jxr_linenumber" name="L179" href="#L179">179</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L180" href="#L180">180</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L181" href="#L181">181</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/GatewayVoiceUpdatePayload.html">GatewayVoiceUpdatePayload</a> {
+<a class="jxr_linenumber" name="L181" href="#L181">181</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/GatewayVoiceUpdatePayload.html">GatewayVoiceUpdatePayload</a> {
 <a class="jxr_linenumber" name="L182" href="#L182">182</a>     @javax.annotation.Nullable <a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> guildId;
 <a class="jxr_linenumber" name="L183" href="#L183">183</a>     Nullable&lt;Snowflake&gt; channelId = 
 <a class="jxr_linenumber" name="L184" href="#L184">184</a>   Nullable.ofNull()
@@ -226,7 +226,7 @@
 <a class="jxr_linenumber" name="L218" href="#L218">218</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L219" href="#L219">219</a>   @Deprecated
 <a class="jxr_linenumber" name="L220" href="#L220">220</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L221" href="#L221">221</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayVoiceUpdatePayload.html">ImmutableGatewayVoiceUpdatePayload</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Json</a> json) {
+<a class="jxr_linenumber" name="L221" href="#L221">221</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableGatewayVoiceUpdatePayload.html">ImmutableGatewayVoiceUpdatePayload</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Json</a> json) {
 <a class="jxr_linenumber" name="L222" href="#L222">222</a>     ImmutableGatewayVoiceUpdatePayload.Builder builder = ImmutableGatewayVoiceUpdatePayload.builder();
 <a class="jxr_linenumber" name="L223" href="#L223">223</a>     <strong class="jxr_keyword">if</strong> (json.guildId != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L224" href="#L224">224</a>       builder.guildId(json.guildId);
@@ -279,7 +279,7 @@
 <a class="jxr_linenumber" name="L271" href="#L271">271</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L272" href="#L272">272</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L273" href="#L273">273</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L274" href="#L274">274</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> {
+<a class="jxr_linenumber" name="L274" href="#L274">274</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> {
 <a class="jxr_linenumber" name="L275" href="#L275">275</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_GUILD_ID = 0x1L;
 <a class="jxr_linenumber" name="L276" href="#L276">276</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_IS_SELF_MUTE = 0x2L;
 <a class="jxr_linenumber" name="L277" href="#L277">277</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_IS_SELF_DEAF = 0x4L;
@@ -290,7 +290,7 @@
 <a class="jxr_linenumber" name="L282" href="#L282">282</a>     <strong class="jxr_keyword">private</strong> @javax.annotation.Nullable Boolean isSelfMute;
 <a class="jxr_linenumber" name="L283" href="#L283">283</a>     <strong class="jxr_keyword">private</strong> @javax.annotation.Nullable Boolean isSelfDeaf;
 <a class="jxr_linenumber" name="L284" href="#L284">284</a> 
-<a class="jxr_linenumber" name="L285" href="#L285">285</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a>() {
+<a class="jxr_linenumber" name="L285" href="#L285">285</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a>() {
 <a class="jxr_linenumber" name="L286" href="#L286">286</a>     }
 <a class="jxr_linenumber" name="L287" href="#L287">287</a> 
 <a class="jxr_linenumber" name="L288" href="#L288">288</a>     <em class="jxr_javadoccomment">/**</em>
@@ -301,7 +301,7 @@
 <a class="jxr_linenumber" name="L293" href="#L293">293</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L294" href="#L294">294</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L295" href="#L295">295</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L296" href="#L296">296</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/GatewayVoiceUpdatePayload.html">GatewayVoiceUpdatePayload</a> instance) {
+<a class="jxr_linenumber" name="L296" href="#L296">296</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/GatewayVoiceUpdatePayload.html">GatewayVoiceUpdatePayload</a> instance) {
 <a class="jxr_linenumber" name="L297" href="#L297">297</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L298" href="#L298">298</a>       guildId(instance.getGuildId());
 <a class="jxr_linenumber" name="L299" href="#L299">299</a>       channelId(instance.getChannelId());
@@ -317,24 +317,24 @@
 <a class="jxr_linenumber" name="L309" href="#L309">309</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L310" href="#L310">310</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L311" href="#L311">311</a>     @JsonProperty(<span class="jxr_string">"guild_id"</span>)
-<a class="jxr_linenumber" name="L312" href="#L312">312</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> guildId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> guildId) {
+<a class="jxr_linenumber" name="L312" href="#L312">312</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> guildId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> guildId) {
 <a class="jxr_linenumber" name="L313" href="#L313">313</a>       <strong class="jxr_keyword">this</strong>.guildId = Objects.requireNonNull(guildId, <span class="jxr_string">"guildId"</span>);
 <a class="jxr_linenumber" name="L314" href="#L314">314</a>       initBits &amp;= ~INIT_BIT_GUILD_ID;
 <a class="jxr_linenumber" name="L315" href="#L315">315</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L316" href="#L316">316</a>     }
 <a class="jxr_linenumber" name="L317" href="#L317">317</a> 
 <a class="jxr_linenumber" name="L318" href="#L318">318</a>     @JsonProperty(<span class="jxr_string">"channel_id"</span>)
-<a class="jxr_linenumber" name="L319" href="#L319">319</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> channelId(Nullable&lt;Snowflake&gt; value) {
+<a class="jxr_linenumber" name="L319" href="#L319">319</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> channelId(Nullable&lt;Snowflake&gt; value) {
 <a class="jxr_linenumber" name="L320" href="#L320">320</a>       <strong class="jxr_keyword">this</strong>.channelId_value = value;
 <a class="jxr_linenumber" name="L321" href="#L321">321</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L322" href="#L322">322</a>     }
 <a class="jxr_linenumber" name="L323" href="#L323">323</a> 
-<a class="jxr_linenumber" name="L324" href="#L324">324</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> nullChannelId() {
+<a class="jxr_linenumber" name="L324" href="#L324">324</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> nullChannelId() {
 <a class="jxr_linenumber" name="L325" href="#L325">325</a>       <strong class="jxr_keyword">this</strong>.channelId_value = Nullable.ofNull();
 <a class="jxr_linenumber" name="L326" href="#L326">326</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L327" href="#L327">327</a>     }
 <a class="jxr_linenumber" name="L328" href="#L328">328</a> 
-<a class="jxr_linenumber" name="L329" href="#L329">329</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> channelId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> value) {
+<a class="jxr_linenumber" name="L329" href="#L329">329</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> channelId(<a href="../../../../../../com/github/princesslana/eriscasper/data/Snowflake.html">Snowflake</a> value) {
 <a class="jxr_linenumber" name="L330" href="#L330">330</a>       <strong class="jxr_keyword">this</strong>.channelId_value = Nullable.of(value);
 <a class="jxr_linenumber" name="L331" href="#L331">331</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="L332" href="#L332">332</a>     }
@@ -346,7 +346,7 @@
 <a class="jxr_linenumber" name="L338" href="#L338">338</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L339" href="#L339">339</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L340" href="#L340">340</a>     @JsonProperty(<span class="jxr_string">"self_mute"</span>)
-<a class="jxr_linenumber" name="L341" href="#L341">341</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> isSelfMute(Boolean isSelfMute) {
+<a class="jxr_linenumber" name="L341" href="#L341">341</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> isSelfMute(Boolean isSelfMute) {
 <a class="jxr_linenumber" name="L342" href="#L342">342</a>       <strong class="jxr_keyword">this</strong>.isSelfMute = Objects.requireNonNull(isSelfMute, <span class="jxr_string">"isSelfMute"</span>);
 <a class="jxr_linenumber" name="L343" href="#L343">343</a>       initBits &amp;= ~INIT_BIT_IS_SELF_MUTE;
 <a class="jxr_linenumber" name="L344" href="#L344">344</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -359,7 +359,7 @@
 <a class="jxr_linenumber" name="L351" href="#L351">351</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L352" href="#L352">352</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L353" href="#L353">353</a>     @JsonProperty(<span class="jxr_string">"self_deaf"</span>)
-<a class="jxr_linenumber" name="L354" href="#L354">354</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> isSelfDeaf(Boolean isSelfDeaf) {
+<a class="jxr_linenumber" name="L354" href="#L354">354</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> isSelfDeaf(Boolean isSelfDeaf) {
 <a class="jxr_linenumber" name="L355" href="#L355">355</a>       <strong class="jxr_keyword">this</strong>.isSelfDeaf = Objects.requireNonNull(isSelfDeaf, <span class="jxr_string">"isSelfDeaf"</span>);
 <a class="jxr_linenumber" name="L356" href="#L356">356</a>       initBits &amp;= ~INIT_BIT_IS_SELF_DEAF;
 <a class="jxr_linenumber" name="L357" href="#L357">357</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;

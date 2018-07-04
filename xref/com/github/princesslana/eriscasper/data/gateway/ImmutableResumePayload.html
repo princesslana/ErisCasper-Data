@@ -161,7 +161,7 @@
 <a class="jxr_linenumber" name="L153" href="#L153">153</a>   @Deprecated
 <a class="jxr_linenumber" name="L154" href="#L154">154</a>   @JsonDeserialize
 <a class="jxr_linenumber" name="L155" href="#L155">155</a>   @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE)
-<a class="jxr_linenumber" name="L156" href="#L156">156</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ResumePayload.html">ResumePayload</a> {
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>   <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Json</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ResumePayload.html">ResumePayload</a> {
 <a class="jxr_linenumber" name="L157" href="#L157">157</a>     @Nullable String token;
 <a class="jxr_linenumber" name="L158" href="#L158">158</a>     @Nullable String sessionId;
 <a class="jxr_linenumber" name="L159" href="#L159">159</a>     @Nullable Long seq;
@@ -192,7 +192,7 @@
 <a class="jxr_linenumber" name="L184" href="#L184">184</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L185" href="#L185">185</a>   @Deprecated
 <a class="jxr_linenumber" name="L186" href="#L186">186</a>   @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
-<a class="jxr_linenumber" name="L187" href="#L187">187</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableResumePayload.html">ImmutableResumePayload</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Json</a> json) {
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>   <strong class="jxr_keyword">static</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableResumePayload.html">ImmutableResumePayload</a> fromJson(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Json</a> json) {
 <a class="jxr_linenumber" name="L188" href="#L188">188</a>     ImmutableResumePayload.Builder builder = ImmutableResumePayload.builder();
 <a class="jxr_linenumber" name="L189" href="#L189">189</a>     <strong class="jxr_keyword">if</strong> (json.token != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L190" href="#L190">190</a>       builder.token(json.token);
@@ -238,7 +238,7 @@
 <a class="jxr_linenumber" name="L230" href="#L230">230</a> <em class="jxr_javadoccomment">   * but instead used immediately to create instances.&lt;/em&gt;</em>
 <a class="jxr_linenumber" name="L231" href="#L231">231</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L232" href="#L232">232</a>   @NotThreadSafe
-<a class="jxr_linenumber" name="L233" href="#L233">233</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> {
+<a class="jxr_linenumber" name="L233" href="#L233">233</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> {
 <a class="jxr_linenumber" name="L234" href="#L234">234</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_TOKEN = 0x1L;
 <a class="jxr_linenumber" name="L235" href="#L235">235</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_SESSION_ID = 0x2L;
 <a class="jxr_linenumber" name="L236" href="#L236">236</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> INIT_BIT_SEQ = 0x4L;
@@ -248,7 +248,7 @@
 <a class="jxr_linenumber" name="L240" href="#L240">240</a>     <strong class="jxr_keyword">private</strong> @Nullable String sessionId;
 <a class="jxr_linenumber" name="L241" href="#L241">241</a>     <strong class="jxr_keyword">private</strong> @Nullable Long seq;
 <a class="jxr_linenumber" name="L242" href="#L242">242</a> 
-<a class="jxr_linenumber" name="L243" href="#L243">243</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a>() {
+<a class="jxr_linenumber" name="L243" href="#L243">243</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a>() {
 <a class="jxr_linenumber" name="L244" href="#L244">244</a>     }
 <a class="jxr_linenumber" name="L245" href="#L245">245</a> 
 <a class="jxr_linenumber" name="L246" href="#L246">246</a>     <em class="jxr_javadoccomment">/**</em>
@@ -259,7 +259,7 @@
 <a class="jxr_linenumber" name="L251" href="#L251">251</a> <em class="jxr_javadoccomment">     * @return {@code this} builder for use in a chained invocation</em>
 <a class="jxr_linenumber" name="L252" href="#L252">252</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L253" href="#L253">253</a>     @CanIgnoreReturnValue 
-<a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ResumePayload.html">ResumePayload</a> instance) {
+<a class="jxr_linenumber" name="L254" href="#L254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> from(<a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ResumePayload.html">ResumePayload</a> instance) {
 <a class="jxr_linenumber" name="L255" href="#L255">255</a>       Objects.requireNonNull(instance, <span class="jxr_string">"instance"</span>);
 <a class="jxr_linenumber" name="L256" href="#L256">256</a>       token(instance.getToken());
 <a class="jxr_linenumber" name="L257" href="#L257">257</a>       sessionId(instance.getSessionId());
@@ -274,7 +274,7 @@
 <a class="jxr_linenumber" name="L266" href="#L266">266</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L267" href="#L267">267</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L268" href="#L268">268</a>     @JsonProperty(<span class="jxr_string">"token"</span>)
-<a class="jxr_linenumber" name="L269" href="#L269">269</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> token(String token) {
+<a class="jxr_linenumber" name="L269" href="#L269">269</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> token(String token) {
 <a class="jxr_linenumber" name="L270" href="#L270">270</a>       <strong class="jxr_keyword">this</strong>.token = Objects.requireNonNull(token, <span class="jxr_string">"token"</span>);
 <a class="jxr_linenumber" name="L271" href="#L271">271</a>       initBits &amp;= ~INIT_BIT_TOKEN;
 <a class="jxr_linenumber" name="L272" href="#L272">272</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -287,7 +287,7 @@
 <a class="jxr_linenumber" name="L279" href="#L279">279</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L280" href="#L280">280</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L281" href="#L281">281</a>     @JsonProperty(<span class="jxr_string">"session_id"</span>)
-<a class="jxr_linenumber" name="L282" href="#L282">282</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> sessionId(String sessionId) {
+<a class="jxr_linenumber" name="L282" href="#L282">282</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> sessionId(String sessionId) {
 <a class="jxr_linenumber" name="L283" href="#L283">283</a>       <strong class="jxr_keyword">this</strong>.sessionId = Objects.requireNonNull(sessionId, <span class="jxr_string">"sessionId"</span>);
 <a class="jxr_linenumber" name="L284" href="#L284">284</a>       initBits &amp;= ~INIT_BIT_SESSION_ID;
 <a class="jxr_linenumber" name="L285" href="#L285">285</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
@@ -300,7 +300,7 @@
 <a class="jxr_linenumber" name="L292" href="#L292">292</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L293" href="#L293">293</a>     @CanIgnoreReturnValue 
 <a class="jxr_linenumber" name="L294" href="#L294">294</a>     @JsonProperty(<span class="jxr_string">"seq"</span>)
-<a class="jxr_linenumber" name="L295" href="#L295">295</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableIdentifyPayload.html">Builder</a> seq(Long seq) {
+<a class="jxr_linenumber" name="L295" href="#L295">295</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../com/github/princesslana/eriscasper/data/gateway/ImmutableConnectionPropertiesPayload.html">Builder</a> seq(Long seq) {
 <a class="jxr_linenumber" name="L296" href="#L296">296</a>       <strong class="jxr_keyword">this</strong>.seq = Objects.requireNonNull(seq, <span class="jxr_string">"seq"</span>);
 <a class="jxr_linenumber" name="L297" href="#L297">297</a>       initBits &amp;= ~INIT_BIT_SEQ;
 <a class="jxr_linenumber" name="L298" href="#L298">298</a>       <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
